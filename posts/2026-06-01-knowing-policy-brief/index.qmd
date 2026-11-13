@@ -1,0 +1,26 @@
+---
+title: "Policy brief: system dynamics models for climate mitigation and adaptation policy design"
+description: "Lessons from KNOWING and NEVERMORE on what system dynamics models can – and cannot – contribute to regional climate policy."
+date: 2026-06-01
+image: ../../assets/img/knowing-brief.png
+categories: [KNOWING, Publication, Policy, System dynamics, Climate adaptation and mitigation]
+---
+
+The Horizon Europe projects KNOWING and NEVERMORE published a joint policy brief on the use of system dynamics (SD) models in the design of climate mitigation and adaptation policy. Both projects developed SD models at local and regional level and applied them together with stakeholders in their demonstrator and case study regions. The brief summarises what was learnt for policymakers and planners who commission or use such models.
+
+## Key messages
+
+- **SD models are tools for comparing policy directions, not forecasts.** They are suited to nonlinear, feedback-driven systems and show how a system might respond to different policy packages. Their results are structured explorations of plausible futures.
+- **Mitigation and adaptation should be modelled together.** Their interactions – co-benefits as well as trade-offs – are best represented endogenously in one model rather than in separate tracks.
+- **Adaptation is harder to quantify than mitigation.** Adaptation outcomes depend on social, institutional and local factors, which require more contextualisation and stakeholder input.
+- **Data remain a bottleneck.** Cross-sectoral data are often fragmented or inconsistent, and future conditions are uncertain. Harmonisation and scenario analysis address part of this.
+- **Co-creation is part of the modelling.** Local knowledge enters the assumptions, calibration, scenario design and validation, and validation is an ongoing process rather than a final test.
+- **SD supports pathway development.** It helps to compare policy packages, identify co-benefits and trade-offs, assess timing and delays, and develop backcasted pathways towards target states. Transferability analysis can support the diffusion of pathways to other regions.
+
+Open issues named in the brief include rebound effects, the formal integration of backcasting optimisation and richer data for adaptation.
+
+## Download and models
+
+- [Policy brief (PDF, KNOWING website)](https://knowing-climate.eu/wp-content/uploads/2026/06/Policy-brief-NEVERMORE-and-KNOWING-Modelling.pdf)
+- [KNOWING models and data on Zenodo](https://zenodo.org/communities/knowing/)
+- [NEVERMORE local SD models on GitHub](https://github.com/NevermoreHE/Local-models)

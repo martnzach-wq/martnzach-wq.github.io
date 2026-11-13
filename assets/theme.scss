@@ -1,0 +1,106 @@
+/*-- scss:defaults --*/
+$font-family-sans-serif: "Inter Variable", system-ui, -apple-system, "Segoe UI", sans-serif;
+$headings-font-family: "Source Serif 4 Variable", Georgia, serif;
+$headings-font-weight: 600;
+$font-size-root: 17px;
+$line-height-base: 1.6;
+$navbar-padding-y: 0.9rem;
+
+/*-- scss:rules --*/
+
+// ---------- global ----------
+body { font-feature-settings: "ss01", "cv11"; }
+h1, h2, h3, .title { letter-spacing: -0.01em; }
+a { text-underline-offset: 0.18em; text-decoration-thickness: 1px; }
+.navbar { border-bottom: 1px solid var(--mz-rule); }
+.navbar-brand .navbar-title { font-family: $headings-font-family; font-weight: 600; font-size: 1.2rem; }
+.nav-footer { border-top: 1px solid var(--mz-rule); font-size: 0.85rem; }
+
+// Placeholder marker for content still to be confirmed – remove before going live
+.todo {
+  background: var(--mz-todo-bg);
+  color: var(--mz-todo-fg);
+  padding: 0 0.3em;
+  border-radius: 3px;
+  font-size: 0.92em;
+}
+
+// ---------- homepage ----------
+.mz-hero {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: 1.25rem;
+  padding: 2.5rem 0 2rem;
+  border-bottom: 1px solid var(--mz-rule);
+  margin-bottom: 2.5rem;
+}
+.mz-hero .mz-lead {
+  font-family: $headings-font-family;
+  font-size: clamp(1.35rem, 1.1rem + 1vw, 1.75rem);
+  line-height: 1.4;
+  font-weight: 400;
+  max-width: 38ch;
+  margin: 0;
+}
+.mz-hero .mz-sub { color: var(--mz-muted); max-width: 62ch; margin: 0; }
+.mz-hero .mz-links { display: flex; flex-wrap: wrap; gap: 0.5rem 1.25rem; font-size: 0.92rem; }
+
+.mz-section-head {
+  display: flex; align-items: baseline; justify-content: space-between;
+  gap: 1rem; margin: 2.5rem 0 1rem;
+}
+.mz-section-head h2 { margin: 0; font-size: 1.35rem; border: none; }
+.mz-section-head a { font-size: 0.9rem; white-space: nowrap; }
+.mz-kicker {
+  font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.08em;
+  color: var(--mz-muted); font-weight: 600;
+}
+
+// ---------- listings ----------
+.quarto-listing-default .quarto-post {
+  border-bottom: 1px solid var(--mz-rule);
+  padding-bottom: 1.5rem; margin-bottom: 1.5rem;
+}
+.quarto-post .listing-title { font-family: $headings-font-family; font-size: 1.3rem; }
+.quarto-post .thumbnail img, .quarto-grid-item .card-img-top img, .quarto-grid-item img.thumbnail-image {
+  border-radius: 6px;
+}
+.listing-categories .listing-category, .quarto-category {
+  border-radius: 999px;
+  border-color: var(--mz-rule) !important;
+  font-size: 0.72rem;
+  text-transform: none;
+}
+.quarto-grid-item.card {
+  background: var(--mz-surface);
+  border: 1px solid var(--mz-rule);
+  border-radius: 8px;
+  transition: border-color 0.15s ease;
+}
+.quarto-grid-item.card:hover { border-color: var(--mz-accent); }
+.quarto-grid-item .card-title { font-family: $headings-font-family; font-weight: 600; }
+.quarto-listing-category-title { font-family: $headings-font-family; }
+
+// ---------- post pages ----------
+#title-block-header .title { font-size: clamp(1.8rem, 1.4rem + 1.6vw, 2.5rem); line-height: 1.2; }
+#title-block-header .description { font-family: $headings-font-family; font-size: 1.15rem; color: var(--mz-muted); }
+main.content p, main.content li { max-width: 68ch; }
+.mz-facts {
+  font-size: 0.92rem; padding: 1rem 1.25rem; margin: 1.5rem 0;
+  background: var(--mz-accent-soft); border-radius: 8px; max-width: 68ch;
+}
+.mz-facts dl {
+  display: grid; grid-template-columns: max-content minmax(0, 1fr); gap: 0.4rem 1.25rem; margin: 0;
+}
+.mz-facts dt { font-weight: 600; }
+.mz-facts dd { margin: 0; }
+.mz-facts dd p { margin: 0; }
+
+.quarto-grid-item .card-img-top img, .quarto-grid-item img.thumbnail-image {
+  object-fit: cover; object-position: center;
+}
+
+@media (max-width: 576px) {
+  .mz-facts dl { grid-template-columns: minmax(0, 1fr); gap: 0.1rem; }
+  .mz-facts dd { margin-bottom: 0.5rem; }
+}

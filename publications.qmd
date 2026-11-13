@@ -1,0 +1,39 @@
+---
+title: "Publications"
+description: "Selected publications and conference contributions. The full list is available via [ORCID](https://orcid.org/0000-0002-6487-1468)."
+---
+
+## Submitted and in preparation
+
+- Jaroszweski, D., Zach, M., Bügelmayer-Blaschek, M., Chapman, L., Millonig, A., Leone, M., Turchi, A., Hainoun, A., Stortecky, S., Nocerino, G. (2026). Understanding complex interactions between climate mitigation and adaptation measures – a methodological framework. Submitted to *One Earth*.
+- Zach, M., et al. (in preparation). An expandable system dynamics framework for integrated assessment of climate adaptation and mitigation pathways.
+
+## Climate, systems modelling and mobility (since 2019)
+
+- Zach, M., Kokoll, B., Rudloff, C. (2026). Modelling climate-resilient transport futures: a hybrid approach across urban and rural regions. In: Esztergár-Kiss, D. et al. (eds.), *TRA Conference 2026*, Lecture Notes in Mobility, Springer. [doi:10.1007/978-3-032-37170-6_145](https://doi.org/10.1007/978-3-032-37170-6_145) · [Note](posts/2026-05-20-tra-2026-climate-resilient-transport/index.qmd)
+- NEVERMORE and KNOWING projects (2026). *System dynamics models for climate mitigation and adaptation policy design.* Joint policy brief (contribution of the KNOWING modelling framework). [PDF](https://knowing-climate.eu/wp-content/uploads/2026/06/Policy-brief-NEVERMORE-and-KNOWING-Modelling.pdf) · [Note](posts/2026-06-01-knowing-policy-brief/index.qmd)
+- Habibi, R., Ramsey, A., Zach, M., Javed, B., Khan, Z. (2025). A systems thinking approach to inclusive governance. *Discover Global Society* 3, 169. [doi:10.1007/s44282-025-00317-y](https://doi.org/10.1007/s44282-025-00317-y)
+- Zach, M., Gebetsroither-Geringer, E., Bernadó, L., Lampert, J. (2025). The KNOWING Impact Interaction Model Framework – building upon the results of domain models for climate resilient pathways. *International System Dynamics Conference (ISDC) 2025*. [Abstract](https://proceedings.systemdynamics.org/2025/abstracts/1138.html)
+- Zach, M. (2024). Quantifying causal relationships by means of multiple domain models for the climate change mitigation and adaptation nexus. *ISDC 2024*. [Abstract](https://proceedings.systemdynamics.org/2024/abstracts/1420.html)
+- Zach, M., Gebetsroither, E., Bügelmayer-Blaschek, M. (2023). Climate change risks, adaptation and mitigation: a qualitative model of the interdependencies and responses. *ISDC 2023*. [Abstract](https://proceedings.systemdynamics.org/2023/abstracts/1058.html)
+- Ziakopoulos, A., Roussou, J., Chaudhry, A., Hu, B., Zach, M., et al. (2023). The LEVITATE Policy Support Tool of connected and automated transport systems. *Proceedings of the Transport Research Arena TRA 2022*, Lisbon. [Record](https://publications.ait.ac.at/en/publications/the-levitate-policy-support-tool-of-connected-and-automated-trans/)
+- Zach, M., Chaudhry, A., Bijleveld, F. (2022). Assessing systemic and wider impacts of cooperative, connected and automated mobility. *Proceedings of the 2022 International System Dynamics Conference*. [PDF](https://proceedings.systemdynamics.org/2022/papers/P1209.pdf)
+- Ziakopoulos, A., Roussou, J., Boghani, H., Hu, B., Zach, M., Oikonomou, M., Veisten, K. (2022). Methodological framework of creating the LEVITATE Policy Support Tool for connected and automated transport systems. *Proceedings of the 8th Road Safety and Simulation International Conference*, 1–10. [Record](https://toi.no/other-publications-8000/methodological-framework-of-the-levitate-policy-support-tool-for-connected-and-automated-transport-systems-article37620-815.html)
+- Ziakopoulos, A., Roussou, J., Boghani, H., Hu, B., Zach, M., et al. (2021). Forecasting impacts of connected and automated transport systems within the LEVITATE project. *10th International Congress on Transportation Research*, Proceedings.
+
+## Management of distributed and complex systems (2006–2011)
+
+- Arozarena, P., Toribio, R., Kielthy, J., …, Zach, M. (2010). Probabilistic fault diagnosis in the MAGNETO autonomic control loop. *AIMS 2010*, Lecture Notes in Computer Science 6155. [Full text](https://dl.ifip.org/IFIP-LNCS-6155/hal-01056642)
+- Fallon, L., Parker, D., Zach, M., Leitner, M., Collins, S. (2007). Self-forming network management topologies in the Madeira management system. *AIMS 2007*, Lecture Notes in Computer Science.
+- Zach, M., Fahy, C., Carroll, R., et al. (2006). Towards a framework for network management applications based on peer-to-peer paradigms: the CELTIC project Madeira. *10th IEEE/IFIP Network Operations and Management Symposium (NOMS 2006)*, Vancouver. [Record](https://repository.wit.ie/194/)
+
+## Computational physics (selected)
+
+- Faber, M., Ivanov, A. N., Troitskaya, N. I., Zach, M. (2000). Path integral representation for Wilson loops and the non-Abelian Stokes theorem. *Physical Review D* 62, 025019. [doi:10.1103/PhysRevD.62.025019](https://doi.org/10.1103/PhysRevD.62.025019)
+- Zach, M., Faber, M., Skala, P. (1998). Investigating confinement in dually transformed U(1) lattice gauge theory. *Physical Review D* 57, 123. [doi:10.1103/PhysRevD.57.123](https://doi.org/10.1103/PhysRevD.57.123)
+- Zach, M., Faber, M., Skala, P. (1998). Flux tubes and their interaction in U(1) lattice gauge theory. *Nuclear Physics B*. [doi:10.1016/S0550-3213(98)00363-0](https://doi.org/10.1016/S0550-3213(98)00363-0)
+- Skala, P., Faber, M., Zach, M. (1998). On the influence of colour magnetic currents on the confining properties of SU(3) lattice gauge theory. *Physics Letters B*. [doi:10.1016/S0370-2693(98)00186-5](https://doi.org/10.1016/S0370-2693(98)00186-5)
+- Skala, P., Faber, M., Zach, M. (1997). Colour magnetic currents and the dual London equation in SU(3) lattice gauge theory. *Nuclear Physics B*. [doi:10.1016/S0550-3213(97)00127-2](https://doi.org/10.1016/S0550-3213(97)00127-2)
+- Zach, M., Faber, M., Kainz, W., Skala, P. (1995). Monopole currents in U(1) lattice gauge theory: a comparison to an effective model based on dual superconductivity. *Physics Letters B*. [doi:10.1016/0370-2693(95)01013-G](https://doi.org/10.1016/0370-2693(95)01013-G)
+
+Further publications from these areas (1995–2011) are listed on [ORCID](https://orcid.org/0000-0002-6487-1468).

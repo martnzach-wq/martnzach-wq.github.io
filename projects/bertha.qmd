@@ -1,0 +1,36 @@
+---
+title: "BERTHA"
+subtitle: "Horizon Europe · 2023–2026 · completed"
+description: "Behavioural replication of human drivers for connected, cooperative and automated mobility (CCAM)."
+image: ../assets/img/bertha.png
+order: 3
+categories: [BERTHA, Mobility, Automated driving, Driver behaviour]
+listing:
+  contents: "../posts/*/index.qmd"
+  include:
+    categories: "BERTHA"
+  type: default
+  sort: "date desc"
+  fields: [date, title, description]
+  date-format: "D MMM YYYY"
+---
+
+BERTHA (*Behavioural Replication of Human Drivers for CCAM*) developed a probabilistic Driver Behavioural Model (DBM) that reproduces key aspects of human driving and can be integrated into simulation-based validation of automated vehicles. Model components are available through the BERTHA Data HUB and were integrated into the CARLA simulation environment.
+
+::: {.mz-facts}
+Funding
+: Horizon Europe (CCAM Partnership), grant agreement [101076360](https://cordis.europa.eu/project/id/101076360)
+
+Website
+: [berthaproject.eu](https://berthaproject.eu/)
+
+Duration
+: November 2023 – 2026
+
+My role
+: Task leader of T1.2 (stratification of the driver population according to driving styles, reported in D1.2) and T5.4 (acceptance testing)
+:::
+
+![](../assets/img/logos/eu-funded.png){width=220px fig-alt="Funded by the European Union"}
+
+## Related notes

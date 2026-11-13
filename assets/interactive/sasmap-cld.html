@@ -1,0 +1,518 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>SASMAP-15mC · Consolidated CLD (D2.1)</title>
+<style>
+:root{--bg:#fbfbfa;--ink:#1a1a1a;--mut:#6b6b6b;--line:#d9d7d2;--panel:#fff;}
+*{box-sizing:border-box}
+body{margin:0;font:14px/1.5 -apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif;background:var(--bg);color:var(--ink);height:100vh;display:flex;flex-direction:column;overflow:hidden}
+header{flex:0 0 auto;padding:14px 22px 11px;border-bottom:1px solid var(--line);background:var(--panel)}
+h1{margin:0 0 4px;font-size:18px;letter-spacing:-.2px}
+header p{margin:0;color:var(--mut);font-size:12.5px;max-width:120ch}
+.wrap{flex:1 1 auto;display:flex;min-height:0}
+aside{width:334px;flex:0 0 334px;border-right:1px solid var(--line);background:var(--panel);padding:13px;overflow-y:auto}
+main{flex:1 1 auto;min-width:0;position:relative;overflow:hidden}
+.grp{margin-bottom:13px}
+.grp h4{margin:0 0 6px;font-size:11px;text-transform:uppercase;letter-spacing:.7px;color:var(--mut);display:flex;align-items:center;gap:6px}
+.grp h4 i{width:10px;height:10px;border-radius:2px;display:inline-block}
+.grp h4 s{margin-left:auto;text-decoration:none;font-variant-numeric:tabular-nums}
+button.lp{display:block;width:100%;text-align:left;background:none;border:1px solid transparent;border-radius:7px;padding:5px 8px;cursor:pointer;font:inherit;font-size:12.5px;color:var(--ink)}
+button.lp:hover{background:#f0efec}
+button.lp.on{background:#1a1a1a;color:#fff}
+button.lp b{display:inline-block;min-width:42px;font-variant-numeric:tabular-nums}
+button.lp.R b{color:#0072B2}button.lp.B b{color:#D55E00}
+button.lp.on b{color:#fff}button.lp.on span{color:#ddd}
+button.lp span{color:var(--mut)}
+button.lp.proposed{opacity:.92}
+button.lp.proposed b::after{content:"○";margin-left:4px;font-size:9px;vertical-align:2px;color:#b3a888}
+button.lp.tested b::after{content:"●";margin-left:4px;font-size:9px;vertical-align:2px;color:#009E73}
+button.lp em{font-style:normal;color:#C55A11}
+.chips{display:flex;gap:5px;flex-wrap:wrap;margin-bottom:10px}
+.chip{border:1px solid var(--line);background:#fff;border-radius:20px;padding:3px 10px;cursor:pointer;font:inherit;font-size:11.5px;color:var(--mut)}
+.chip.on{background:#1a1a1a;border-color:#1a1a1a;color:#fff}
+#reset{width:100%;margin-bottom:10px;padding:7px;border:1px solid var(--line);background:#fff;border-radius:7px;cursor:pointer;font:inherit;font-size:12.5px}
+#cv{position:absolute;inset:0;width:100%;height:100%;display:block;cursor:grab}
+svg.drag{cursor:grabbing}
+.node rect{fill:#fff;stroke:#333;stroke-width:1.3}
+.node.exo rect{stroke-dasharray:5 3;fill:#f7f6f3}
+.node text{font-size:9.6px;text-anchor:middle;fill:#1a1a1a;pointer-events:none}
+.sub-demand rect{stroke:#0072B2}
+.sub-supply rect{stroke:#009E73}
+.sub-governance rect{stroke:#CC79A7}
+.sub-proximity rect{stroke:#8C6D31}
+.edge{fill:none;stroke:#bdbab4;stroke-width:1.2}
+.edge.neg{stroke-dasharray:6 3.5}
+.edge.st-proposed{stroke:#d8c27a}
+.edge.st-weak{opacity:.45}
+text.pol{font-size:11.5px;fill:#8d8a84;text-anchor:middle;font-weight:700;pointer-events:none}
+text.pol.neg{fill:#a86a3d}
+text.dly{font-size:11px;fill:#8d8a84;text-anchor:middle;pointer-events:none;font-weight:700}
+.filtered .edge,.filtered text.pol,.filtered text.dly{opacity:.06}
+.filtered .node{opacity:.13}
+.filtered .edge.hi{opacity:1;stroke:#1a1a1a;stroke-width:2.5}
+.filtered text.pol.hi,.filtered text.dly.hi{opacity:1;fill:#1a1a1a}
+.filtered .node.hi{opacity:1}
+.filtered .node.hi rect{stroke-width:2.6}
+footer{flex:0 0 auto;border-top:1px solid var(--line);background:var(--panel);padding:9px 22px;font-size:11.5px;color:var(--mut);display:flex;gap:14px;flex-wrap:wrap;align-items:center}
+.lg{display:inline-flex;align-items:center;gap:5px}.lg i{width:10px;height:10px;border-radius:2px}
+#det{position:absolute;left:14px;bottom:14px;right:14px;max-height:38%;overflow:auto;background:rgba(255,255,255,.975);border:1px solid var(--line);border-radius:10px;padding:12px 14px;display:none;box-shadow:0 2px 14px rgba(0,0,0,.08)}
+#det.on{display:block}
+#det h3{margin:0 0 3px;font-size:14px}
+#det .k{margin:0 0 7px;color:var(--mut);font-size:12px}
+#det .ch{margin:0 0 7px;font-size:12.5px;line-height:1.95}
+#det .nt{margin:0;font-size:12.5px;color:#444;border-top:1px solid var(--line);padding-top:7px}
+.pos{color:#0072B2;font-weight:700}.negp{color:#D55E00;font-weight:700}
+.tag{display:inline-block;border-radius:4px;padding:1px 6px;font-size:11px;margin-right:5px;background:#f0efec;color:#555}
+.tag.gd{background:#ffe9e9;color:#a00}
+.hint{color:var(--mut);font-size:11.5px;margin:0 0 9px}
+@media (max-width:760px){body{height:auto;overflow:auto}.wrap{flex-direction:column}aside{width:auto!important;flex:0 0 auto!important;max-height:260px;border-right:0!important;border-bottom:1px solid var(--line)}main{height:70vh}}
+</style></head><body>
+<header>
+<h1>SASMAP-15mC · WP2 — Consolidated causal loop diagram (D2.1)</h1>
+<p>The 23 feedback loops of the consolidated set in D2.1 (main report, Chapter 5; Technical Annex, TA-7): 11 from the entry-level set taken into the Round 1 workshops and 12 added in the refinement. 91 variables, 103 causal links, 23 loops (9 discussed in Round 1, 14 proposed; 3 goal-divergent). Loop type is counted from the link signs: R reinforcing (even number of negative links), B balancing (odd number). The diagrams carry no magnitudes and no stocks; the stock-and-flow layer is prepared for D2.2 and WP4. Status 13 November 2026.</p>
+</header>
+<div class="wrap">
+<aside>
+<button id="reset">Clear selection</button>
+<p class="hint">Select a loop to highlight its path. ● discussed in Round 1 · ○ proposed (evidence, not yet tested)</p>
+<div class="chips">
+<button class="chip on" data-f="all">all</button>
+<button class="chip" data-f="validated">Round 1</button>
+<button class="chip" data-f="proposed">proposed</button>
+<button class="chip" data-f="gd">goal-divergent</button>
+</div>
+<div class="grp" data-cat="supporting"><h4><i style="background:#009E73"></i>Supporting <s>11</s></h4>
+<button class="lp R tested" data-l="CLD-1"><b>CLD-1</b> <span>Adoption and availability</span></button>
+<button class="lp R tested" data-l="CLD-2"><b>CLD-2</b> <span>Social norms and environmental values</span></button>
+<button class="lp R tested" data-l="CLD-3"><b>CLD-3</b> <span>Cost comparison</span></button>
+<button class="lp R tested" data-l="CLD-4"><b>CLD-4</b> <span>Public transport integration</span></button>
+<button class="lp R tested" data-l="CLD-5"><b>CLD-5</b> <span>Proximity and the 15-minute city</span></button>
+<button class="lp R tested" data-l="CLD-6a"><b>CLD-6a</b> <span>Parking reallocation — provision ring</span></button>
+<button class="lp R proposed" data-l="CLD-11a"><b>CLD-11a</b> <span>Breadth–depth</span></button>
+<button class="lp R proposed" data-l="CLD-13"><b>CLD-13</b> <span>Local retail and proximity</span></button>
+<button class="lp R proposed" data-l="CLD-14a"><b>CLD-14a</b> <span>Corporate and segment load balancing</span></button>
+<button class="lp R proposed" data-l="CLD-15a"><b>CLD-15a</b> <span>Peer-to-peer supply</span></button>
+<button class="lp R proposed" data-l="CLD-16"><b>CLD-16</b> <span>Parking standard and development</span></button>
+</div>
+<div class="grp" data-cat="limiting"><h4><i style="background:#D55E00"></i>Limiting <s>9</s></h4>
+<button class="lp B tested" data-l="CLD-6b"><b>CLD-6b</b> <span>Parking reallocation — opposition ring</span></button>
+<button class="lp B proposed" data-l="CLD-7"><b>CLD-7</b> <span>Congestion</span></button>
+<button class="lp B proposed" data-l="CLD-8"><b>CLD-8</b> <span>Service erosion</span></button>
+<button class="lp B tested" data-l="CLD-9"><b>CLD-9</b> <span>Equity and exclusion</span></button>
+<button class="lp B tested" data-l="CLD-10"><b>CLD-10</b> <span>Care and carrying</span></button>
+<button class="lp R proposed" data-l="CLD-12"><b>CLD-12</b> <span>Car-ownership norm lock-in</span></button>
+<button class="lp B proposed" data-l="CLD-14b"><b>CLD-14b</b> <span>Corporate load balancing — contention counterpart</span></button>
+<button class="lp B proposed" data-l="CLD-17"><b>CLD-17</b> <span>Association and volunteer capacity</span></button>
+<button class="lp R proposed" data-l="CLD-19"><b>CLD-19</b> <span>Electrification cost trap</span></button>
+</div>
+<div class="grp" data-cat="goal-divergent"><h4><i style="background:#CC0000"></i>Goal-divergent <s>3</s></h4>
+<button class="lp R proposed" data-l="CLD-11b"><b>CLD-11b</b> <span>Public transport displacement</span></button>
+<button class="lp R proposed" data-l="CLD-15b"><b>CLD-15b</b> <span>Ownership retention</span></button>
+<button class="lp B proposed" data-l="CLD-18"><b>CLD-18</b> <span>Proximity and gentrification</span></button>
+</div>
+</aside>
+<main>
+<svg id="cv" viewBox="0 0 2802 2287" xmlns="http://www.w3.org/2000/svg">
+<defs><marker id="ah" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6.5" markerHeight="6.5" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z" fill="#9d9a95"/></marker></defs>
+<g id="scene">
+<path id="e0" class="edge st-tested" d="M1933.9 689.1 Q1846.7 884.2 1790.8 1090.4" marker-end="url(#ah)"/>
+<text id="e0L" class="pol pos" x="1837.8" y="938.7">+</text>
+<path id="e1" class="edge st-tested" d="M1784.9 1122.9 Q1778.3 1202.2 1784.1 1281.5" marker-end="url(#ah)"/>
+<text id="e1L" class="pol pos" x="1781.5" y="1224.6">+</text>
+<path id="e2" class="edge st-tested" d="M1794.3 1281.5 Q1901.5 1137.5 1985.1 978.7" marker-end="url(#ah)"/>
+<text id="e2L" class="pol pos" x="1918.1" y="1100.6">+</text>
+<path id="e3" class="edge st-tested" d="M1994.6 934.7 Q1979.9 810.0 1946.1 689.1" marker-end="url(#ah)"/>
+<text id="e3L" class="pol pos" x="1969.0" y="785.0">+</text>
+<path id="e4" class="edge st-tested" d="M1984.1 645.1 Q2097.7 597.0 2202.5 531.7" marker-end="url(#ah)"/>
+<text id="e4L" class="pol pos" x="2121.6" y="582.2">+</text>
+<path id="e5" class="edge st-tested" d="M2249.6 531.7 Q2260.7 614.7 2284.5 695.0" marker-end="url(#ah)"/>
+<text id="e5L" class="pol pos" x="2268.2" y="637.0">+</text>
+<path id="e6" class="edge st-tested" d="M2236.0 704.6 Q2117.2 680.0 1996.0 674.1" marker-end="url(#ah)"/>
+<text id="e6L" class="pol pos" x="2087.7" y="684.7">+</text>
+<path id="e7" class="edge st-tested" d="M1332.9 869.3 Q1187.0 939.3 1053.6 1031.0" marker-end="url(#ah)"/>
+<text id="e7L" class="pol pos" x="1156.8" y="967.8">+</text>
+<path id="e8" class="edge st-tested" d="M1075.4 1040.7 Q1252.7 1018.4 1424.3 968.8" marker-end="url(#ah)"/>
+<text id="e8L" class="pol pos" x="1293.1" y="1005.9">+</text>
+<path id="e9" class="edge st-tested" d="M1505.7 935.1 Q1582.8 875.7 1649.7 805.2" marker-end="url(#ah)"/>
+<text id="e9L" class="pol pos" x="1597.4" y="860.6">+</text>
+<path id="e10" class="edge st-tested" d="M1622.1 794.8 Q1515.7 810.0 1413.0 841.4" marker-end="url(#ah)"/>
+<text id="e10L" class="pol pos" x="1491.6" y="823.3">+</text>
+<path id="e11" class="edge st-tested" d="M1165.7 1003.8 Q986.6 1062.5 818.7 1148.3" marker-end="url(#ah)"/>
+<text id="e11L" class="pol pos" x="947.9" y="1090.4">+</text>
+<path id="e12" class="edge st-tested" d="M776.3 1148.3 Q766.1 1068.6 743.7 991.5" marker-end="url(#ah)"/>
+<text id="e12L" class="pol pos" x="758.9" y="1053.9">+</text>
+<path id="e13" class="edge st-tested" d="M791.1 948.5 Q958.8 895.4 1116.3 816.9" marker-end="url(#ah)"/>
+<text id="e13L" class="pol pos" x="995.1" y="876.3">+</text>
+<path id="e14" class="edge st-tested" d="M1176.4 816.9 Q1189.2 886.6 1212.6 953.4" marker-end="url(#ah)"/>
+<text id="e14L" class="pol pos" x="1196.3" y="905.6">+</text>
+<path id="e15" class="edge neg st-tested" d="M1887.5 647.3 Q1652.6 540.0 1403.9 470.5" marker-end="url(#ah)"/>
+<text id="e15L" class="pol neg" x="1590.9" y="532.2">−</text>
+<text id="e15D" class="dly" x="1678.1" y="564.2">‖</text>
+<path id="e16" class="edge neg st-tested" d="M1356.3 421.9 Q1388.0 347.6 1407.9 269.3" marker-end="url(#ah)"/>
+<text id="e16L" class="pol neg" x="1391.1" y="331.6">−</text>
+<text id="e16D" class="dly" x="1381.9" y="359.8">‖</text>
+<path id="e17" class="edge st-tested" d="M1469.3 258.3 Q1590.9 308.2 1718.8 338.6" marker-end="url(#ah)"/>
+<text id="e17L" class="pol pos" x="1622.5" y="316.1">+</text>
+<path id="e18" class="edge neg st-tested" d="M1827.3 369.5 Q1906.6 395.8 1988.9 409.5" marker-end="url(#ah)"/>
+<text id="e18L" class="pol neg" x="1926.8" y="400.7">−</text>
+<path id="e19" class="edge neg st-tested" d="M2032.0 444.3 Q1983.5 541.6 1950.6 645.1" marker-end="url(#ah)"/>
+<text id="e19L" class="pol neg" x="1977.9" y="570.7">−</text>
+<path id="e20" class="edge st-tested" d="M1309.0 865.0 Q964.5 916.6 632.2 1021.0" marker-end="url(#ah)"/>
+<text id="e20L" class="pol pos" x="886.5" y="952.7">+</text>
+<path id="e21" class="edge st-tested" d="M545.6 1012.8 Q491.0 960.4 428.9 917.1" marker-end="url(#ah)"/>
+<text id="e21L" class="pol pos" x="475.0" y="954.7">+</text>
+<path id="e22" class="edge st-tested" d="M442.2 873.1 Q596.7 803.4 738.6 710.7" marker-end="url(#ah)"/>
+<text id="e22L" class="pol pos" x="628.9" y="781.2">+</text>
+<path id="e23" class="edge st-tested" d="M830.7 703.3 Q1064.6 789.5 1309.0 838.4" marker-end="url(#ah)"/>
+<text id="e23L" class="pol pos" x="1124.8" y="799.2">+</text>
+<path id="e24" class="edge st-tested" d="M368.6 917.1 Q302.7 953.4 243.3 999.4" marker-end="url(#ah)"/>
+<text id="e24L" class="pol pos" x="289.4" y="969.2">+</text>
+<path id="e25" class="edge neg st-tested" d="M261.9 1023.3 Q386.9 1037.7 512.7 1032.6" marker-end="url(#ah)"/>
+<text id="e25L" class="pol neg" x="417.2" y="1037.1">−</text>
+<path id="e26" class="edge st-proposed" d="M1368.5 836.8 Q1460.2 673.4 1525.4 497.8" marker-end="url(#ah)"/>
+<text id="e26L" class="pol pos" x="1472.0" y="632.9">+</text>
+<path id="e27" class="edge st-proposed" d="M1480.9 480.2 Q1356.3 467.2 1231.1 473.6" marker-end="url(#ah)"/>
+<text id="e27L" class="pol pos" x="1326.2" y="474.9">+</text>
+<path id="e28" class="edge neg st-proposed" d="M1218.1 488.5 Q1365.9 564.0 1523.5 615.7" marker-end="url(#ah)"/>
+<text id="e28L" class="pol neg" x="1405.1" y="576.4">−</text>
+<path id="e29" class="edge st-proposed" d="M1583.3 659.7 Q1615.5 798.4 1668.8 930.4" marker-end="url(#ah)"/>
+<text id="e29L" class="pol pos" x="1631.4" y="832.5">+</text>
+<path id="e30" class="edge st-proposed" d="M1622.0 931.1 Q1519.9 891.7 1413.0 868.6" marker-end="url(#ah)"/>
+<text id="e30L" class="pol pos" x="1493.6" y="891.9">+</text>
+<path id="e31" class="edge st-proposed" d="M1360.6 869.3 Q1337.3 1098.1 1349.8 1327.7" marker-end="url(#ah)"/>
+<text id="e31L" class="pol pos" x="1345.5" y="1156.7">+</text>
+<path id="e32" class="edge neg st-proposed" d="M1409.1 1328.8 Q1469.6 1318.3 1527.8 1298.6" marker-end="url(#ah)"/>
+<text id="e32L" class="pol neg" x="1483.2" y="1315.6">−</text>
+<path id="e33" class="edge st-proposed" d="M1586.4 1268.6 Q1639.9 1119.0 1669.6 962.9" marker-end="url(#ah)"/>
+<text id="e33L" class="pol pos" x="1643.6" y="1084.0">+</text>
+<path id="e34" class="edge st-tested" d="M1350.6 869.3 Q1265.2 982.8 1198.3 1108.1" marker-end="url(#ah)"/>
+<text id="e34L" class="pol pos" x="1251.8" y="1018.0">+</text>
+<path id="e35" class="edge st-tested" d="M1176.5 1108.1 Q1121.9 906.2 1036.6 715.2" marker-end="url(#ah)"/>
+<text id="e35L" class="pol pos" x="1097.0" y="865.3">+</text>
+<path id="e36" class="edge neg st-tested" d="M1090.6 690.3 Q1209.0 682.5 1324.8 656.4" marker-end="url(#ah)"/>
+<text id="e36L" class="pol neg" x="1236.4" y="677.0">−</text>
+<path id="e37" class="edge st-tested" d="M1382.7 664.0 Q1366.0 749.6 1362.9 836.8" marker-end="url(#ah)"/>
+<text id="e37L" class="pol pos" x="1367.2" y="774.2">+</text>
+<path id="e38" class="edge st-tested" d="M1413.0 849.0 Q1612.1 848.9 1808.8 817.9" marker-end="url(#ah)"/>
+<text id="e38L" class="pol pos" x="1659.0" y="840.4">+</text>
+<path id="e39" class="edge st-tested" d="M1899.9 791.9 Q1981.8 753.8 2056.9 703.5" marker-end="url(#ah)"/>
+<text id="e39L" class="pol pos" x="1998.8" y="743.4">+</text>
+<path id="e40" class="edge neg st-tested" d="M2036.2 666.1 Q1947.0 635.6 1854.2 619.2" marker-end="url(#ah)"/>
+<text id="e40L" class="pol neg" x="1924.2" y="637.1">−</text>
+<path id="e41" class="edge st-tested" d="M1762.9 627.8 Q1568.3 717.8 1390.0 836.8" marker-end="url(#ah)"/>
+<text id="e41L" class="pol pos" x="1527.9" y="753.9">+</text>
+<path id="e42" class="edge st-proposed" d="M1138.2 1880.0 Q1176.2 1889.6 1215.4 1893.2" marker-end="url(#ah)"/>
+<text id="e42L" class="pol pos" x="1185.8" y="1893.0">+</text>
+<path id="e43" class="edge st-proposed" d="M1282.1 1880.4 Q1342.2 1791.8 1387.7 1695.0" marker-end="url(#ah)"/>
+<text id="e43L" class="pol pos" x="1351.0" y="1770.8">+</text>
+<path id="e44" class="edge st-proposed" d="M1406.2 1651.0 Q1442.3 1550.0 1462.3 1444.7" marker-end="url(#ah)"/>
+<text id="e44L" class="pol pos" x="1444.8" y="1527.5">+</text>
+<path id="e45" class="edge st-proposed" d="M1440.8 1444.7 Q1337.8 1529.1 1249.2 1628.4" marker-end="url(#ah)"/>
+<text id="e45L" class="pol pos" x="1318.6" y="1558.5">+</text>
+<path id="e46" class="edge st-proposed" d="M1212.3 1672.4 Q1151.3 1753.7 1103.8 1843.4" marker-end="url(#ah)"/>
+<text id="e46L" class="pol pos" x="1141.8" y="1779.8">+</text>
+<path id="e47" class="edge neg st-proposed" d="M1460.5 1389.2 Q1434.4 1284.7 1392.3 1185.5" marker-end="url(#ah)"/>
+<text id="e47L" class="pol neg" x="1422.0" y="1265.1">−</text>
+<path id="e48" class="edge st-proposed" d="M1327.9 1180.8 Q1149.0 1220.3 978.4 1287.0" marker-end="url(#ah)"/>
+<text id="e48L" class="pol pos" x="1109.3" y="1243.6">+</text>
+<path id="e49" class="edge st-proposed" d="M869.8 1332.9 Q821.7 1355.4 777.8 1385.2" marker-end="url(#ah)"/>
+<text id="e49L" class="pol pos" x="811.8" y="1367.0">+</text>
+<path id="e50" class="edge neg st-proposed" d="M796.0 1397.8 Q961.3 1383.9 1122.4 1344.4" marker-end="url(#ah)"/>
+<text id="e50L" class="pol neg" x="999.3" y="1374.1">−</text>
+<path id="e51" class="edge st-proposed" d="M1241.9 1351.7 Q1327.9 1383.8 1417.8 1402.1" marker-end="url(#ah)"/>
+<text id="e51L" class="pol pos" x="1350.0" y="1389.6">+</text>
+<path id="e52" class="edge st-proposed" d="M2653.8 491.5 Q2608.8 470.5 2561.1 456.7" marker-end="url(#ah)"/>
+<text id="e52L" class="pol pos" x="2596.9" y="471.6">+</text>
+<path id="e53" class="edge st-proposed" d="M2511.5 463.0 Q2528.6 555.7 2559.8 644.6" marker-end="url(#ah)"/>
+<text id="e53L" class="pol pos" x="2538.1" y="579.9">+</text>
+<path id="e54" class="edge st-proposed" d="M2591.1 644.6 Q2643.3 592.5 2686.9 533.0" marker-end="url(#ah)"/>
+<text id="e54L" class="pol pos" x="2652.5" y="580.6">+</text>
+<path id="e55" class="edge st-proposed" d="M2137.2 185.8 Q2083.0 138.2 2022.1 99.5" marker-end="url(#ah)"/>
+<text id="e55L" class="pol pos" x="2067.4" y="133.6">+</text>
+<path id="e56" class="edge st-proposed" d="M1925.3 77.6 Q1813.8 79.9 1703.9 99.4" marker-end="url(#ah)"/>
+<text id="e56L" class="pol pos" x="1787.6" y="90.5">+</text>
+<path id="e57" class="edge st-proposed" d="M1589.9 112.1 Q1415.4 119.9 1244.2 154.7" marker-end="url(#ah)"/>
+<text id="e57L" class="pol pos" x="1374.8" y="135.5">+</text>
+<path id="e58" class="edge st-proposed" d="M1244.2 179.7 Q1303.0 206.0 1365.3 223.0" marker-end="url(#ah)"/>
+<text id="e58L" class="pol pos" x="1318.5" y="212.1">+</text>
+<path id="e59" class="edge st-proposed" d="M1469.3 237.7 Q1635.1 238.3 1799.1 213.2" marker-end="url(#ah)"/>
+<text id="e59L" class="pol pos" x="1674.2" y="232.0">+</text>
+<path id="e60" class="edge st-proposed" d="M1907.6 209.0 Q2011.1 216.6 2114.5 208.0" marker-end="url(#ah)"/>
+<text id="e60L" class="pol pos" x="2035.9" y="215.6">+</text>
+<path id="e61" class="edge st-proposed" d="M1754.4 2218.1 Q1703.0 2210.8 1651.0 2211.6" marker-end="url(#ah)"/>
+<text id="e61L" class="pol pos" x="1690.4" y="2215.6">+</text>
+<path id="e62" class="edge st-proposed" d="M1620.1 2180.7 Q1692.3 2099.7 1751.0 2008.6" marker-end="url(#ah)"/>
+<text id="e62L" class="pol pos" x="1704.4" y="2079.8">+</text>
+<path id="e63" class="edge st-proposed" d="M1789.0 1964.6 Q1911.4 1856.6 2015.6 1730.9" marker-end="url(#ah)"/>
+<text id="e63L" class="pol pos" x="1933.8" y="1827.3">+</text>
+<path id="e64" class="edge st-proposed" d="M2034.5 1730.9 Q1987.5 1856.6 1960.5 1988.0" marker-end="url(#ah)"/>
+<text id="e64L" class="pol pos" x="1983.9" y="1892.4">+</text>
+<path id="e65" class="edge st-proposed" d="M1932.8 2043.5 Q1871.4 2117.1 1822.0 2199.3" marker-end="url(#ah)"/>
+<text id="e65L" class="pol pos" x="1861.3" y="2141.5">+</text>
+<path id="e66" class="edge st-proposed" d="M2198.3 1466.9 Q2067.6 1528.6 1948.1 1609.8" marker-end="url(#ah)"/>
+<text id="e66L" class="pol pos" x="2040.5" y="1554.3">+</text>
+<path id="e67" class="edge neg st-proposed" d="M1881.0 1665.3 Q1838.8 1719.0 1805.5 1778.6" marker-end="url(#ah)"/>
+<text id="e67L" class="pol neg" x="1832.1" y="1737.6">−</text>
+<path id="e68" class="edge st-proposed" d="M1843.9 1783.3 Q1919.5 1759.4 1990.4 1724.1" marker-end="url(#ah)"/>
+<text id="e68L" class="pol pos" x="1935.9" y="1752.7">+</text>
+<path id="e69" class="edge st-proposed" d="M2063.3 1675.4 Q2149.9 1577.3 2220.2 1466.9" marker-end="url(#ah)"/>
+<text id="e69L" class="pol pos" x="2164.4" y="1552.4">+</text>
+<path id="e70" class="edge st-proposed" d="M2102.8 1106.9 Q2164.2 1068.9 2218.9 1021.9" marker-end="url(#ah)"/>
+<text id="e70L" class="pol pos" x="2176.4" y="1059.7">+</text>
+<path id="e71" class="edge st-proposed" d="M2233.3 1021.9 Q2126.6 1149.4 2040.8 1291.8" marker-end="url(#ah)"/>
+<text id="e71L" class="pol pos" x="2109.0" y="1189.1">+</text>
+<path id="e72" class="edge st-proposed" d="M2082.0 1291.8 Q2138.9 1274.7 2192.4 1249.0" marker-end="url(#ah)"/>
+<text id="e72L" class="pol pos" x="2151.2" y="1270.7">+</text>
+<path id="e73" class="edge st-proposed" d="M2232.1 1256.6 Q2169.5 1372.2 2125.6 1496.1" marker-end="url(#ah)"/>
+<text id="e73L" class="pol pos" x="2161.7" y="1406.6">+</text>
+<path id="e74" class="edge st-proposed" d="M2063.8 1503.4 Q2002.4 1480.8 1938.2 1467.9" marker-end="url(#ah)"/>
+<text id="e74L" class="pol pos" x="1986.6" y="1482.5">+</text>
+<path id="e75" class="edge st-proposed" d="M1897.7 1424.1 Q1989.3 1293.8 2059.7 1150.9" marker-end="url(#ah)"/>
+<text id="e75L" class="pol pos" x="2003.1" y="1261.0">+</text>
+<path id="e76" class="edge neg st-proposed" d="M2323.6 1655.6 Q2435.0 1513.0 2522.9 1354.8" marker-end="url(#ah)"/>
+<text id="e76L" class="pol neg" x="2452.7" y="1476.2">−</text>
+<path id="e77" class="edge st-proposed" d="M2541.7 1310.8 Q2574.6 1189.7 2588.3 1064.9" marker-end="url(#ah)"/>
+<text id="e77L" class="pol pos" x="2575.1" y="1162.6">+</text>
+<path id="e78" class="edge neg st-proposed" d="M2558.6 1064.9 Q2495.9 1107.1 2440.5 1158.5" marker-end="url(#ah)"/>
+<text id="e78L" class="pol neg" x="2483.7" y="1124.2">−</text>
+<path id="e79" class="edge st-proposed" d="M2381.3 1214.0 Q2247.2 1345.5 2135.0 1496.1" marker-end="url(#ah)"/>
+<text id="e79L" class="pol pos" x="2223.4" y="1387.8">+</text>
+<path id="e80" class="edge st-proposed" d="M2116.1 1540.1 Q2106.6 1680.6 2119.0 1820.9" marker-end="url(#ah)"/>
+<text id="e80L" class="pol pos" x="2112.7" y="1717.6">+</text>
+<path id="e81" class="edge st-proposed" d="M2150.1 1820.9 Q2222.1 1765.5 2284.6 1699.6" marker-end="url(#ah)"/>
+<text id="e81L" class="pol pos" x="2235.7" y="1751.5">+</text>
+<path id="e82" class="edge st-proposed" d="M234.4 1356.8 Q190.7 1326.1 142.7 1302.4" marker-end="url(#ah)"/>
+<text id="e82L" class="pol pos" x="178.6" y="1324.8">+</text>
+<path id="e83" class="edge st-proposed" d="M136.9 1246.9 Q212.0 1204.0 279.6 1150.0" marker-end="url(#ah)"/>
+<text id="e83L" class="pol pos" x="227.2" y="1192.8">+</text>
+<path id="e84" class="edge st-proposed" d="M340.9 1094.5 Q455.4 961.9 547.9 813.2" marker-end="url(#ah)"/>
+<text id="e84L" class="pol pos" x="474.4" y="927.3">+</text>
+<path id="e85" class="edge neg st-proposed" d="M620.3 805.0 Q729.2 855.8 844.6 889.1" marker-end="url(#ah)"/>
+<text id="e85L" class="pol neg" x="757.8" y="864.7">−</text>
+<path id="e86" class="edge neg st-proposed" d="M869.4 930.6 Q699.4 1047.6 549.6 1189.6" marker-end="url(#ah)"/>
+<text id="e86L" class="pol neg" x="666.4" y="1088.7">−</text>
+<path id="e87" class="edge st-proposed" d="M476.5 1245.1 Q393.9 1294.9 320.0 1356.8" marker-end="url(#ah)"/>
+<text id="e87L" class="pol pos" x="377.4" y="1314.9">+</text>
+<path id="e88" class="edge st-proposed" d="M1657.6 1587.4 Q1617.9 1699.8 1596.2 1816.9" marker-end="url(#ah)"/>
+<text id="e88L" class="pol pos" x="1615.3" y="1732.0">+</text>
+<path id="e89" class="edge st-proposed" d="M1578.6 1860.9 Q1524.1 1946.6 1483.6 2039.6" marker-end="url(#ah)"/>
+<text id="e89L" class="pol pos" x="1516.4" y="1973.4">+</text>
+<path id="e90" class="edge neg st-proposed" d="M1416.8 2079.5 Q1371.5 2086.3 1327.8 2100.1" marker-end="url(#ah)"/>
+<text id="e90L" class="pol neg" x="1361.3" y="2094.0">−</text>
+<path id="e91" class="edge st-proposed" d="M1288.7 2085.6 Q1363.7 1987.0 1422.5 1878.0" marker-end="url(#ah)"/>
+<text id="e91L" class="pol pos" x="1375.5" y="1962.8">+</text>
+<path id="e92" class="edge st-proposed" d="M1453.9 1834.0 Q1559.7 1718.2 1646.3 1587.4" marker-end="url(#ah)"/>
+<text id="e92L" class="pol pos" x="1577.7" y="1688.1">+</text>
+<path id="e93" class="edge st-proposed" d="M585.3 445.4 Q535.7 467.3 490.2 496.7" marker-end="url(#ah)"/>
+<text id="e93L" class="pol pos" x="525.4" y="478.8">+</text>
+<path id="e94" class="edge st-proposed" d="M442.4 496.7 Q424.1 417.9 393.9 343.0" marker-end="url(#ah)"/>
+<text id="e94L" class="pol pos" x="415.1" y="403.9">+</text>
+<path id="e95" class="edge neg st-proposed" d="M436.8 299.0 Q481.4 283.4 522.9 261.0" marker-end="url(#ah)"/>
+<text id="e95L" class="pol neg" x="490.9" y="280.4">−</text>
+<path id="e96" class="edge st-proposed" d="M630.3 262.4 Q692.7 305.6 761.0 338.6" marker-end="url(#ah)"/>
+<text id="e96L" class="pol pos" x="710.0" y="315.5">+</text>
+<path id="e97" class="edge st-proposed" d="M801.0 338.6 Q788.4 273.5 765.8 211.1" marker-end="url(#ah)"/>
+<text id="e97L" class="pol pos" x="781.5" y="262.3">+</text>
+<path id="e98" class="edge st-proposed" d="M743.8 211.1 Q690.5 296.9 651.2 389.9" marker-end="url(#ah)"/>
+<text id="e98L" class="pol pos" x="683.1" y="323.6">+</text>
+<path id="e99" class="edge neg st-proposed" d="M861.6 1724.6 Q824.0 1796.2 798.0 1872.7" marker-end="url(#ah)"/>
+<text id="e99L" class="pol neg" x="819.4" y="1818.7">−</text>
+<path id="e100" class="edge st-proposed" d="M745.1 1872.7 Q633.2 1804.7 512.1 1754.8" marker-end="url(#ah)"/>
+<text id="e100L" class="pol pos" x="602.8" y="1798.7">+</text>
+<path id="e101" class="edge st-proposed" d="M469.9 1699.6 Q502.3 1638.4 524.9 1573.0" marker-end="url(#ah)"/>
+<text id="e101L" class="pol pos" x="506.3" y="1625.5">+</text>
+<path id="e102" class="edge neg st-proposed" d="M591.2 1569.7 Q698.5 1628.5 813.7 1669.9" marker-end="url(#ah)"/>
+<text id="e102L" class="pol neg" x="727.3" y="1639.3">−</text>
+<g id="n0" class="node sub-proximity"><rect x="730.7" y="670.7" width="96.0" height="36.0" rx="5"/><text x="778.7" y="686.4">Access and</text><text x="778.7" y="697.9">convenience</text></g>
+<g id="n1" class="node sub-proximity"><rect x="975.1" y="686.7" width="111.5" height="24.5" rx="5"/><text x="1030.8" y="702.4">Accessibility gap</text></g>
+<g id="n2" class="node sub-demand"><rect x="1722.8" y="338.1" width="100.5" height="36.0" rx="5"/><text x="1773.1" y="353.8">Active mobility</text><text x="1773.1" y="365.3">and short trips</text></g>
+<g id="n3" class="node sub-proximity"><rect x="526.9" y="210.9" width="111.5" height="47.5" rx="5"/><text x="582.7" y="226.7">Affordability for</text><text x="582.7" y="238.2">lower-income</text><text x="582.7" y="249.7">residents</text></g>
+<g id="n4" class="node sub-demand"><rect x="1520.6" y="619.7" width="111.5" height="36.0" rx="5"/><text x="1576.3" y="635.5">Attractiveness of</text><text x="1576.3" y="647.0">car sharing</text></g>
+<g id="n5" class="node sub-demand"><rect x="1126.4" y="1316.6" width="111.5" height="36.0" rx="5"/><text x="1182.1" y="1332.4">Attractiveness of</text><text x="1182.1" y="1343.9">car-based travel</text></g>
+<g id="n6" class="node sub-demand"><rect x="1943.2" y="938.7" width="111.5" height="36.0" rx="5"/><text x="1998.9" y="954.4">Attractiveness of</text><text x="1998.9" y="965.9">the offer</text></g>
+<g id="n7" class="node sub-supply"><rect x="1828.2" y="1428.1" width="106.0" height="47.5" rx="5"/><text x="1881.2" y="1443.8">Availability and</text><text x="1881.2" y="1455.3">proximity for</text><text x="1881.2" y="1466.8">renters</text></g>
+<g id="n8" class="node sub-demand"><rect x="1328.8" y="635.5" width="111.5" height="24.5" rx="5"/><text x="1384.6" y="651.3">Breadth of demand</text></g>
+<g id="n9" class="node sub-demand"><rect x="2118.5" y="189.8" width="96.0" height="36.0" rx="5"/><text x="2166.5" y="205.6">Car sharing</text><text x="2166.5" y="217.1">membership</text></g>
+<g id="n10" class="node sub-governance"><rect x="267.5" y="1098.5" width="106.0" height="47.5" rx="5"/><text x="320.5" y="1114.2">Car sharing</text><text x="320.5" y="1125.7">provision in new</text><text x="320.5" y="1137.2">development</text></g>
+<g id="n11" class="node sub-demand"><rect x="1929.3" y="48.0" width="111.5" height="47.5" rx="5"/><text x="1985.1" y="63.8">Car-free and</text><text x="1985.1" y="75.2">low-car household</text><text x="1985.1" y="86.8">share</text></g>
+<g id="n12" class="node sub-demand"><rect x="2040.2" y="663.5" width="111.5" height="36.0" rx="5"/><text x="2096.0" y="679.3">Care and carrying</text><text x="2096.0" y="690.8">intensity</text></g>
+<g id="n13" class="node sub-demand"><rect x="1169.7" y="957.4" width="100.5" height="47.5" rx="5"/><text x="1220.0" y="973.2">Combined use of</text><text x="1220.0" y="984.7">PT and shared</text><text x="1220.0" y="996.2">mobility</text></g>
+<g id="n14" class="node sub-supply"><rect x="1038.2" y="1847.4" width="96.0" height="47.5" rx="5"/><text x="1086.2" y="1863.2">Commercial and</text><text x="1086.2" y="1874.7">political</text><text x="1086.2" y="1886.2">viability</text></g>
+<g id="n15" class="node sub-proximity"><rect x="1131.1" y="460.0" width="96.0" height="24.5" rx="5"/><text x="1179.1" y="475.7">Congestion</text></g>
+<g id="n16" class="node sub-supply"><rect x="1846.5" y="1613.8" width="106.0" height="47.5" rx="5"/><text x="1899.5" y="1629.5">Contention for</text><text x="1899.5" y="1641.0">vehicles at peak</text><text x="1899.5" y="1652.5">hours</text></g>
+<g id="n17" class="node sub-demand"><rect x="1421.8" y="1393.2" width="96.0" height="47.5" rx="5"/><text x="1469.8" y="1409.0">Conversion of</text><text x="1469.8" y="1420.5">light into</text><text x="1469.8" y="1432.0">frequent users</text></g>
+<g id="n18" class="node sub-demand"><rect x="1428.3" y="939.1" width="106.0" height="36.0" rx="5"/><text x="1481.3" y="954.8">Cost per private</text><text x="1481.3" y="966.3">car trip</text></g>
+<g id="n19" class="node sub-supply"><rect x="817.7" y="1673.1" width="111.5" height="47.5" rx="5"/><text x="873.5" y="1688.8">Cost premium of</text><text x="873.5" y="1700.3">an EV in a shared</text><text x="873.5" y="1711.8">fleet</text></g>
+<g id="n20" class="node sub-governance"><rect x="354.0" y="877.1" width="96.0" height="36.0" rx="5"/><text x="402.0" y="892.8">Dedicated bays</text><text x="402.0" y="904.3">and hubs</text></g>
+<g id="n21" class="node sub-demand"><rect x="1626.0" y="934.4" width="96.0" height="24.5" rx="5"/><text x="1674.0" y="950.2">Demand</text></g>
+<g id="n22" class="node sub-governance"><rect x="48.0" y="1250.9" width="96.0" height="47.5" rx="5"/><text x="96.0" y="1266.7">Developer</text><text x="96.0" y="1278.2">incentive to</text><text x="96.0" y="1289.7">include car…</text></g>
+<g id="n23" class="node sub-supply"><rect x="1904.6" y="1992.0" width="96.0" height="47.5" rx="5"/><text x="1952.6" y="2007.8">Evening and</text><text x="1952.6" y="2019.3">weekend</text><text x="1952.6" y="2030.8">utilisation</text></g>
+<g id="n24" class="node sub-governance"><rect x="459.6" y="1193.6" width="111.5" height="47.5" rx="5"/><text x="515.4" y="1209.4">Evidence base for</text><text x="515.4" y="1220.9">lower parking</text><text x="515.4" y="1232.4">standards</text></g>
+<g id="n25" class="node sub-supply"><rect x="1969.4" y="1295.8" width="111.5" height="36.0" rx="5"/><text x="2025.1" y="1311.5">Expected rental</text><text x="2025.1" y="1323.0">income for owners</text></g>
+<g id="n26" class="node sub-governance"><rect x="862.9" y="1281.4" width="111.5" height="47.5" rx="5"/><text x="918.7" y="1297.1">Farebox revenue</text><text x="918.7" y="1308.6">and PT investment</text><text x="918.7" y="1320.1">case</text></g>
+<g id="n27" class="node sub-demand"><rect x="1803.1" y="191.2" width="100.5" height="36.0" rx="5"/><text x="1853.4" y="206.9">Feasibility of</text><text x="1853.4" y="218.4">car-free living</text></g>
+<g id="n28" class="node sub-supply"><rect x="1293.6" y="1331.7" width="111.5" height="24.5" rx="5"/><text x="1349.4" y="1347.4">Fleet utilisation</text></g>
+<g id="n29" class="node sub-supply"><rect x="1136.3" y="1112.1" width="96.0" height="36.0" rx="5"/><text x="1184.3" y="1127.8">Geographic</text><text x="1184.3" y="1139.3">concentration</text></g>
+<g id="n30" class="node sub-demand"><rect x="848.6" y="890.6" width="96.0" height="36.0" rx="5"/><text x="896.6" y="906.3">Household car</text><text x="896.6" y="917.8">ownership</text></g>
+<g id="n31" class="node sub-governance"><rect x="729.4" y="1152.3" width="100.5" height="24.5" rx="5"/><text x="779.7" y="1168.0">Investment case</text></g>
+<g id="n32" class="node sub-proximity"><rect x="702.4" y="159.6" width="111.5" height="47.5" rx="5"/><text x="758.2" y="175.3">Local demand</text><text x="758.2" y="186.8">supporting retail</text><text x="758.2" y="198.3">and shared…</text></g>
+<g id="n33" class="node sub-demand"><rect x="1593.9" y="81.3" width="106.0" height="47.5" rx="5"/><text x="1646.9" y="97.0">Local shopping</text><text x="1646.9" y="108.5">trips on foot or</text><text x="1646.9" y="120.0">by bicycle</text></g>
+<g id="n34" class="node sub-demand"><rect x="1615.5" y="1547.4" width="96.0" height="36.0" rx="5"/><text x="1663.5" y="1563.2">Membership and</text><text x="1663.5" y="1574.7">trip volume</text></g>
+<g id="n35" class="node sub-demand"><rect x="1812.8" y="795.9" width="96.0" height="36.0" rx="5"/><text x="1860.8" y="811.6">Modal shift</text><text x="1860.8" y="823.1">progress</text></g>
+<g id="n36" class="node sub-demand"><rect x="1120.3" y="776.9" width="100.5" height="36.0" rx="5"/><text x="1170.6" y="792.7">Multimodal</text><text x="1170.6" y="804.2">journey quality</text></g>
+<g id="n37" class="node sub-demand"><rect x="2484.5" y="1314.8" width="106.0" height="36.0" rx="5"/><text x="2537.5" y="1330.6">Net private cost</text><text x="2537.5" y="1342.1">of car ownership</text></g>
+<g id="n38" class="node sub-supply"><rect x="1732.0" y="1094.4" width="106.0" height="24.5" rx="5"/><text x="1785.0" y="1110.2">Operator revenue</text></g>
+<g id="n39" class="node sub-governance"><rect x="161.9" y="1003.4" width="96.0" height="36.0" rx="5"/><text x="209.9" y="1019.2">Opposition to</text><text x="209.9" y="1030.7">change</text></g>
+<g id="n40" class="node sub-supply"><rect x="1542.3" y="1820.9" width="96.0" height="36.0" rx="5"/><text x="1590.3" y="1836.7">Organisational</text><text x="1590.3" y="1848.2">workload</text></g>
+<g id="n41" class="node sub-governance"><rect x="691.1" y="951.5" width="96.0" height="36.0" rx="5"/><text x="739.1" y="967.3">PT–shared</text><text x="739.1" y="978.8">integration</text></g>
+<g id="n42" class="node sub-supply"><rect x="2067.8" y="1500.1" width="96.0" height="36.0" rx="5"/><text x="2115.8" y="1515.9">Peer vehicle</text><text x="2115.8" y="1527.4">supply</text></g>
+<g id="n43" class="node sub-demand"><rect x="2451.1" y="411.5" width="106.0" height="47.5" rx="5"/><text x="2504.1" y="427.3">Perceived</text><text x="2504.1" y="438.8">normality of car</text><text x="2504.1" y="450.3">ownership</text></g>
+<g id="n44" class="node sub-demand"><rect x="2022.5" y="1110.9" width="100.5" height="36.0" rx="5"/><text x="2072.7" y="1126.6">Platform renter</text><text x="2072.7" y="1138.1">base</text></g>
+<g id="n45" class="node sub-supply"><rect x="2071.3" y="1824.9" width="96.0" height="47.5" rx="5"/><text x="2119.3" y="1840.6">Platform</text><text x="2119.3" y="1852.1">transaction</text><text x="2119.3" y="1863.6">volume</text></g>
+<g id="n46" class="node sub-governance"><rect x="486.7" y="1521.5" width="100.5" height="47.5" rx="5"/><text x="536.9" y="1537.3">Policy</text><text x="536.9" y="1548.8">recognition and</text><text x="536.9" y="1560.3">exemptions</text></g>
+<g id="n47" class="node sub-governance"><rect x="959.9" y="1035.0" width="111.5" height="36.0" rx="5"/><text x="1015.6" y="1050.8">Political support</text><text x="1015.6" y="1062.3">for car pricing</text></g>
+<g id="n48" class="node sub-demand"><rect x="1992.9" y="404.3" width="96.0" height="36.0" rx="5"/><text x="2040.9" y="420.1">Private car</text><text x="2040.9" y="431.6">dependency</text></g>
+<g id="n49" class="node sub-demand"><rect x="2657.8" y="493.0" width="96.0" height="36.0" rx="5"/><text x="2705.8" y="508.8">Private car</text><text x="2705.8" y="520.3">ownership rate</text></g>
+<g id="n50" class="node sub-demand"><rect x="2349.8" y="1162.5" width="111.5" height="47.5" rx="5"/><text x="2405.5" y="1178.3">Private car stock</text><text x="2405.5" y="1189.8">available for</text><text x="2405.5" y="1201.3">listing</text></g>
+<g id="n51" class="node sub-proximity"><rect x="1293.9" y="425.9" width="106.0" height="47.5" rx="5"/><text x="1346.9" y="441.7">Private cars and</text><text x="1346.9" y="453.2">parking space</text><text x="1346.9" y="464.7">needed</text></g>
+<g id="n52" class="node sub-demand"><rect x="1994.4" y="1679.4" width="96.0" height="47.5" rx="5"/><text x="2042.4" y="1695.1">Private</text><text x="2042.4" y="1706.6">membership and</text><text x="2042.4" y="1718.1">use</text></g>
+<g id="n53" class="node sub-demand"><rect x="2545.6" y="1013.4" width="96.0" height="47.5" rx="5"/><text x="2593.6" y="1029.2">Propensity to</text><text x="2593.6" y="1040.7">give up the</text><text x="2593.6" y="1052.2">vehicle</text></g>
+<g id="n54" class="node sub-proximity"><rect x="588.8" y="393.9" width="96.0" height="47.5" rx="5"/><text x="636.8" y="409.6">Proximity and</text><text x="636.8" y="421.1">neighbourhood</text><text x="636.8" y="432.6">quality</text></g>
+<g id="n55" class="node sub-supply"><rect x="1719.7" y="1968.6" width="96.0" height="36.0" rx="5"/><text x="1767.7" y="1984.4">Proximity for</text><text x="1767.7" y="1995.9">private users</text></g>
+<g id="n56" class="node sub-proximity"><rect x="1369.3" y="217.8" width="96.0" height="47.5" rx="5"/><text x="1417.3" y="233.6">Proximity of</text><text x="1417.3" y="245.1">daily</text><text x="1417.3" y="256.6">destinations</text></g>
+<g id="n57" class="node sub-supply"><rect x="1350.0" y="1655.0" width="100.5" height="36.0" rx="5"/><text x="1400.3" y="1670.7">Proximity to</text><text x="1400.3" y="1682.2">nearest vehicle</text></g>
+<g id="n58" class="node sub-governance"><rect x="516.7" y="1016.8" width="111.5" height="36.0" rx="5"/><text x="572.4" y="1032.5">Public and</text><text x="572.4" y="1044.0">political support</text></g>
+<g id="n59" class="node sub-governance"><rect x="686.0" y="1389.2" width="106.0" height="36.0" rx="5"/><text x="739.0" y="1404.9">Public transport</text><text x="739.0" y="1416.4">service quality</text></g>
+<g id="n60" class="node sub-demand"><rect x="1331.9" y="1145.5" width="106.0" height="36.0" rx="5"/><text x="1384.9" y="1161.2">Public transport</text><text x="1384.9" y="1172.7">trips</text></g>
+<g id="n61" class="node sub-governance"><rect x="225.3" y="1360.8" width="111.5" height="47.5" rx="5"/><text x="281.1" y="1376.6">Regulatory</text><text x="281.1" y="1388.1">permission to</text><text x="281.1" y="1399.6">reduce mandatory…</text></g>
+<g id="n62" class="node sub-demand"><rect x="1626.1" y="765.2" width="96.0" height="36.0" rx="5"/><text x="1674.1" y="780.9">Relative cost</text><text x="1674.1" y="792.4">advantage</text></g>
+<g id="n63" class="node sub-demand"><rect x="2193.3" y="981.9" width="111.5" height="36.0" rx="5"/><text x="2249.0" y="997.7">Rental demand for</text><text x="2249.0" y="1009.2">peer vehicles</text></g>
+<g id="n64" class="node sub-supply"><rect x="2256.0" y="1659.6" width="106.0" height="36.0" rx="5"/><text x="2309.0" y="1675.3">Rental income to</text><text x="2309.0" y="1686.8">owners</text></g>
+<g id="n65" class="node sub-proximity"><rect x="336.7" y="303.0" width="100.5" height="36.0" rx="5"/><text x="386.9" y="318.7">Rents and</text><text x="386.9" y="330.2">property prices</text></g>
+<g id="n66" class="node sub-proximity"><rect x="401.4" y="500.7" width="96.0" height="36.0" rx="5"/><text x="449.4" y="516.4">Residential</text><text x="449.4" y="527.9">desirability</text></g>
+<g id="n67" class="node sub-proximity"><rect x="520.3" y="761.7" width="96.0" height="47.5" rx="5"/><text x="568.3" y="777.5">Residents&#x27;</text><text x="568.3" y="789.0">proximity to a</text><text x="568.3" y="800.5">shared vehicle</text></g>
+<g id="n68" class="node sub-proximity"><rect x="752.9" y="342.6" width="111.5" height="47.5" rx="5"/><text x="808.6" y="358.4">Retention of</text><text x="808.6" y="369.9">low-car-ownership</text><text x="808.6" y="381.4">residents</text></g>
+<g id="n69" class="node sub-supply"><rect x="1758.4" y="2203.3" width="96.0" height="36.0" rx="5"/><text x="1806.4" y="2219.0">Revenue per</text><text x="1806.4" y="2230.5">vehicle</text></g>
+<g id="n70" class="node sub-demand"><rect x="1484.9" y="469.3" width="96.0" height="24.5" rx="5"/><text x="1532.9" y="485.1">Road trips</text></g>
+<g id="n71" class="node sub-supply"><rect x="1731.1" y="1285.5" width="106.0" height="24.5" rx="5"/><text x="1784.1" y="1301.2">Service coverage</text></g>
+<g id="n72" class="node sub-supply"><rect x="1531.8" y="1272.6" width="100.5" height="24.5" rx="5"/><text x="1582.0" y="1288.3">Service quality</text></g>
+<g id="n73" class="node sub-supply"><rect x="1388.7" y="1838.0" width="96.0" height="36.0" rx="5"/><text x="1436.7" y="1853.8">Service</text><text x="1436.7" y="1865.3">reliability</text></g>
+<g id="n74" class="node sub-supply"><rect x="735.6" y="1876.7" width="106.0" height="36.0" rx="5"/><text x="788.6" y="1892.5">Share of EVs in</text><text x="788.6" y="1904.0">the shared fleet</text></g>
+<g id="n75" class="node sub-demand"><rect x="1313.0" y="840.8" width="96.0" height="24.5" rx="5"/><text x="1361.0" y="856.6">Shared car use</text></g>
+<g id="n76" class="node sub-demand"><rect x="1891.5" y="649.1" width="100.5" height="36.0" rx="5"/><text x="1941.7" y="664.9">Shared mobility</text><text x="1941.7" y="676.4">use</text></g>
+<g id="n77" class="node sub-demand"><rect x="2519.2" y="648.6" width="96.0" height="47.5" rx="5"/><text x="2567.2" y="664.3">Social</text><text x="2567.2" y="675.8">expectation to</text><text x="2567.2" y="687.3">own a car</text></g>
+<g id="n78" class="node sub-supply"><rect x="1733.9" y="1782.6" width="106.0" height="47.5" rx="5"/><text x="1786.9" y="1798.3">Spatial</text><text x="1786.9" y="1809.8">availability for</text><text x="1786.9" y="1821.3">private users</text></g>
+<g id="n79" class="node sub-supply"><rect x="1420.8" y="2043.6" width="96.0" height="47.5" rx="5"/><text x="1468.8" y="2059.4">Strain on</text><text x="1468.8" y="2070.9">volunteer</text><text x="1468.8" y="2082.4">capacity</text></g>
+<g id="n80" class="node sub-demand"><rect x="1754.2" y="587.8" width="96.0" height="36.0" rx="5"/><text x="1802.2" y="603.6">Suitability of</text><text x="1802.2" y="615.1">car sharing</text></g>
+<g id="n81" class="node sub-demand"><rect x="2191.9" y="491.7" width="106.0" height="36.0" rx="5"/><text x="2244.9" y="507.5">Sustainable</text><text x="2244.9" y="519.0">travel awareness</text></g>
+<g id="n82" class="node sub-supply"><rect x="1173.2" y="1632.4" width="106.0" height="36.0" rx="5"/><text x="1226.2" y="1648.1">Trips and</text><text x="1226.2" y="1659.6">operator revenue</text></g>
+<g id="n83" class="node sub-demand"><rect x="2240.0" y="699.0" width="96.0" height="24.5" rx="5"/><text x="2288.0" y="714.8">User demand</text></g>
+<g id="n84" class="node sub-supply"><rect x="1219.4" y="1884.4" width="100.5" height="36.0" rx="5"/><text x="1269.6" y="1900.2">Vehicle and</text><text x="1269.6" y="1911.7">station density</text></g>
+<g id="n85" class="node sub-proximity"><rect x="1144.2" y="137.3" width="96.0" height="47.5" rx="5"/><text x="1192.2" y="153.1">Viability of</text><text x="1192.2" y="164.6">neighbourhood</text><text x="1192.2" y="176.1">retail</text></g>
+<g id="n86" class="node sub-supply"><rect x="1551.0" y="2184.7" width="96.0" height="47.5" rx="5"/><text x="1599.0" y="2200.4">Viable vehicle</text><text x="1599.0" y="2211.9">and station</text><text x="1599.0" y="2223.4">density</text></g>
+<g id="n87" class="node sub-governance"><rect x="407.6" y="1703.6" width="100.5" height="47.5" rx="5"/><text x="457.9" y="1719.3">Visibility as</text><text x="457.9" y="1730.8">decarbonisation</text><text x="457.9" y="1742.3">infrastructure</text></g>
+<g id="n88" class="node sub-supply"><rect x="1217.8" y="2089.6" width="106.0" height="47.5" rx="5"/><text x="1270.8" y="2105.4">Volunteer</text><text x="1270.8" y="2116.9">availability and</text><text x="1270.8" y="2128.4">continuity</text></g>
+<g id="n89" class="node sub-demand"><rect x="2186.5" y="1426.9" width="100.5" height="36.0" rx="5"/><text x="2236.8" y="1442.6">Weekday-daytime</text><text x="2236.8" y="1454.1">demand</text></g>
+<g id="n90" class="node sub-demand"><rect x="2196.4" y="1205.1" width="96.0" height="47.5" rx="5"/><text x="2244.4" y="1220.9">Willingness to</text><text x="2244.4" y="1232.4">list a private</text><text x="2244.4" y="1243.9">vehicle</text></g>
+</g></svg>
+<div id="det"></div>
+</main></div>
+<footer><span class="lg"><i style="background:#0072B2"></i>Household practice and demand</span> <span class="lg"><i style="background:#009E73"></i>Operator and platform economics</span> <span class="lg"><i style="background:#CC79A7"></i>Governance, regulation and public space</span> <span class="lg"><i style="background:#8C6D31"></i>Built environment and proximity</span><span class="lg" style="margin-left:auto">─── positive</span><span class="lg">- - - negative</span><span class="lg">‖ delay</span><span class="lg" style="color:#b89a3a">─── link only in proposed loops</span></footer>
+<script>
+var L={"CLD-1": {"n": [76, 38, 71, 6], "e": ["e0", "e1", "e2", "e3"], "chain": [["Shared mobility use", "+", false], ["Operator revenue", "+", false], ["Service coverage", "+", false], ["Attractiveness of the offer", "+", false]], "name": "Adoption and availability", "type": "reinforcing", "cat": "supporting", "status": "tested", "stream": "workshop", "short": false, "city": "", "neg": 0, "note": "Use funds coverage, coverage makes the offer attractive, attractiveness produces use."}, "CLD-2": {"n": [76, 81, 83], "e": ["e4", "e5", "e6"], "chain": [["Shared mobility use", "+", false], ["Sustainable travel awareness", "+", false], ["User demand", "+", false]], "name": "Social norms and environmental values", "type": "reinforcing", "cat": "supporting", "status": "tested", "stream": "workshop", "short": false, "city": "", "neg": 0, "note": "Use raises sustainable travel awareness, which raises demand — social contagion, three nodes."}, "CLD-3": {"n": [75, 47, 18, 62], "e": ["e7", "e8", "e9", "e10"], "chain": [["Shared car use", "+", false], ["Political support for car pricing", "+", false], ["Cost per private car trip", "+", false], ["Relative cost advantage", "+", false]], "name": "Cost comparison", "type": "reinforcing", "cat": "supporting", "status": "tested", "stream": "workshop", "short": false, "city": "", "neg": 0, "note": "Shared car use builds political support for car pricing, raising the cost of a private car trip and the relative advantage of not owning."}, "CLD-4": {"n": [13, 31, 41, 36], "e": ["e11", "e12", "e13", "e14"], "chain": [["Combined use of PT and shared mobility", "+", false], ["Investment case", "+", false], ["PT–shared integration", "+", false], ["Multimodal journey quality", "+", false]], "name": "Public transport integration", "type": "reinforcing", "cat": "supporting", "status": "tested", "stream": "workshop", "short": false, "city": "", "neg": 0, "note": "Combined use builds the investment case for integration, which raises multimodal journey quality."}, "CLD-5": {"n": [76, 51, 56, 2, 48], "e": ["e15", "e16", "e17", "e18", "e19"], "chain": [["Shared mobility use", "-", true], ["Private cars and parking space needed", "-", true], ["Proximity of daily destinations", "+", false], ["Active mobility and short trips", "-", false], ["Private car dependency", "-", false]], "name": "Proximity and the 15-minute city", "type": "reinforcing", "cat": "supporting", "status": "tested", "stream": "workshop", "short": false, "city": "", "neg": 4, "note": "Shared use reduces the cars and parking a city must hold, which brings daily destinations closer and erodes car dependency. Decade-scale."}, "CLD-6a": {"n": [75, 58, 20, 0], "e": ["e20", "e21", "e22", "e23"], "chain": [["Shared car use", "+", false], ["Public and political support", "+", false], ["Dedicated bays and hubs", "+", false], ["Access and convenience", "+", false]], "name": "Parking reallocation — provision ring", "type": "reinforcing", "cat": "supporting", "status": "tested", "stream": "workshop", "short": false, "city": "", "neg": 0, "note": "Support produces dedicated bays and hubs, which improve access and convenience and therefore use."}, "CLD-6b": {"n": [20, 39, 58], "e": ["e24", "e25", "e21"], "chain": [["Dedicated bays and hubs", "+", false], ["Opposition to change", "-", false], ["Public and political support", "+", false]], "name": "Parking reallocation — opposition ring", "type": "balancing", "cat": "limiting", "status": "tested", "stream": "workshop", "short": false, "city": "", "neg": 1, "note": "The bays themselves generate organised opposition, which erodes the support that produced them. This is the ring Round 1 predominantly worked on."}, "CLD-7": {"n": [75, 70, 15, 4, 21], "e": ["e26", "e27", "e28", "e29", "e30"], "chain": [["Shared car use", "+", false], ["Road trips", "+", false], ["Congestion", "-", false], ["Attractiveness of car sharing", "+", false], ["Demand", "+", false]], "name": "Congestion", "type": "balancing", "cat": "limiting", "status": "proposed", "stream": "workshop", "short": false, "city": "", "neg": 1, "note": "Use adds road trips and congestion, which makes the shared car less attractive."}, "CLD-8": {"n": [75, 28, 72, 21], "e": ["e31", "e32", "e33", "e30"], "chain": [["Shared car use", "+", false], ["Fleet utilisation", "-", false], ["Service quality", "+", false], ["Demand", "+", false]], "name": "Service erosion", "type": "balancing", "cat": "limiting", "status": "proposed", "stream": "workshop", "short": false, "city": "", "neg": 1, "note": "Rising utilisation degrades service quality and therefore demand."}, "CLD-9": {"n": [75, 29, 1, 8], "e": ["e34", "e35", "e36", "e37"], "chain": [["Shared car use", "+", false], ["Geographic concentration", "+", false], ["Accessibility gap", "-", false], ["Breadth of demand", "+", false]], "name": "Equity and exclusion", "type": "balancing", "cat": "limiting", "status": "tested", "stream": "workshop", "short": false, "city": "", "neg": 1, "note": "Use concentrates geographically, widening the accessibility gap and narrowing the breadth of demand."}, "CLD-10": {"n": [75, 35, 12, 80], "e": ["e38", "e39", "e40", "e41"], "chain": [["Shared car use", "+", false], ["Modal shift progress", "+", false], ["Care and carrying intensity", "-", false], ["Suitability of car sharing", "+", false]], "name": "Care and carrying", "type": "balancing", "cat": "limiting", "status": "tested", "stream": "workshop", "short": false, "city": "", "neg": 1, "note": "Modal shift raises the share of trips with care and carrying demands, for which the shared car is less suitable. Refinement R1 re-specifies this around temporal flexibility."}, "CLD-11a": {"n": [14, 84, 57, 17, 82], "e": ["e42", "e43", "e44", "e45", "e46"], "chain": [["Commercial and political viability", "+", false], ["Vehicle and station density", "+", false], ["Proximity to nearest vehicle", "+", false], ["Conversion of light into frequent users", "+", false], ["Trips and operator revenue", "+", false]], "name": "Breadth–depth", "type": "reinforcing", "cat": "supporting", "status": "proposed", "stream": "evaluations", "short": false, "city": "", "neg": 0, "note": "Registered base and intensity of use are different stocks: breadth underwrites density, density converts light users into frequent ones. The source link list opens with 'Registered user base', which feeds the ring but is not part of it; held as an off-ring input so that the ring closes and the polarity count is taken on the loop alone."}, "CLD-11b": {"n": [17, 60, 26, 59, 5], "e": ["e47", "e48", "e49", "e50", "e51"], "chain": [["Conversion of light into frequent users", "-", false], ["Public transport trips", "+", false], ["Farebox revenue and PT investment case", "+", false], ["Public transport service quality", "-", false], ["Attractiveness of car-based travel", "+", false]], "name": "Public transport displacement", "type": "reinforcing", "cat": "goal-divergent", "status": "proposed", "stream": "evaluations", "short": false, "city": "", "neg": 2, "note": "Frequent use displaces public transport trips, weakening the PT investment case and its service quality, which makes car-based travel more attractive and shared use more frequent."}, "CLD-12": {"n": [49, 43, 77], "e": ["e52", "e53", "e54"], "chain": [["Private car ownership rate", "+", false], ["Perceived normality of car ownership", "+", false], ["Social expectation to own a car", "+", false]], "name": "Car-ownership norm lock-in", "type": "reinforcing", "cat": "limiting", "status": "proposed", "stream": "evaluations", "short": false, "city": "", "neg": 0, "note": "Ownership sustains the norm that sustains ownership. The mirror of CLD-2, and currently running in the ownership-sustaining direction."}, "CLD-13": {"n": [9, 11, 33, 85, 56, 27], "e": ["e55", "e56", "e57", "e58", "e59", "e60"], "chain": [["Car sharing membership", "+", false], ["Car-free and low-car household share", "+", false], ["Local shopping trips on foot or by bicycle", "+", false], ["Viability of neighbourhood retail", "+", false], ["Proximity of daily destinations", "+", false], ["Feasibility of car-free living", "+", false]], "name": "Local retail and proximity", "type": "reinforcing", "cat": "supporting", "status": "proposed", "stream": "evaluations", "short": false, "city": "", "neg": 0, "note": "Members shop locally, sustaining neighbourhood retail, which is constitutive of proximity — a fast demand-side path alongside the slow spatial one in CLD-5."}, "CLD-14a": {"n": [69, 86, 55, 52, 23], "e": ["e61", "e62", "e63", "e64", "e65"], "chain": [["Revenue per vehicle", "+", false], ["Viable vehicle and station density", "+", false], ["Proximity for private users", "+", false], ["Private membership and use", "+", false], ["Evening and weekend utilisation", "+", false]], "name": "Corporate and segment load balancing", "type": "reinforcing", "cat": "supporting", "status": "proposed", "stream": "evaluations", "short": false, "city": "", "neg": 0, "note": "Business use fills weekday troughs, raising revenue per vehicle and funding the density private users experience as proximity. Generalises to any two segments with non-coincident peaks. The source link list opens with 'Corporate car sharing uptake', which feeds the ring but is not part of it; held as an off-ring input so that the ring closes and the polarity count is taken on the loop alone. The ring proper is the private-segment revenue–density–proximity loop; corporate uptake and weekday utilisation are the off-ring inputs that make it turn faster. Drawing them inside the ring would have double-counted the revenue node."}, "CLD-14b": {"n": [89, 16, 78, 52], "e": ["e66", "e67", "e68", "e69"], "chain": [["Weekday-daytime demand", "+", false], ["Contention for vehicles at peak hours", "-", false], ["Spatial availability for private users", "+", false], ["Private membership and use", "+", false]], "name": "Corporate load balancing — contention counterpart", "type": "balancing", "cat": "limiting", "status": "proposed", "stream": "evidence", "short": false, "city": "", "neg": 1, "note": "Where corporate and private peaks coincide, the segments contend for the same vehicles and spatial availability falls. Whether 14a or 14b dominates is an open empirical question (data gap 2). The source link list opens with 'Corporate car sharing uptake', which feeds the ring but is not part of it; held as an off-ring input so that the ring closes and the polarity count is taken on the loop alone."}, "CLD-15a": {"n": [44, 63, 25, 90, 42, 7], "e": ["e70", "e71", "e72", "e73", "e74", "e75"], "chain": [["Platform renter base", "+", false], ["Rental demand for peer vehicles", "+", false], ["Expected rental income for owners", "+", false], ["Willingness to list a private vehicle", "+", false], ["Peer vehicle supply", "+", false], ["Availability and proximity for renters", "+", false]], "name": "Peer-to-peer supply", "type": "reinforcing", "cat": "supporting", "status": "proposed", "stream": "project-lit", "short": false, "city": "", "neg": 0, "note": "A two-sided market: renter demand raises expected income, which raises willingness to list, which raises availability. Supply is already-owned private cars, not new capital."}, "CLD-15b": {"n": [64, 37, 53, 50, 42, 45], "e": ["e76", "e77", "e78", "e79", "e80", "e81"], "chain": [["Rental income to owners", "-", false], ["Net private cost of car ownership", "+", false], ["Propensity to give up the vehicle", "-", false], ["Private car stock available for listing", "+", false], ["Peer vehicle supply", "+", false], ["Platform transaction volume", "+", false]], "name": "Ownership retention", "type": "reinforcing", "cat": "goal-divergent", "status": "proposed", "stream": "project-lit", "short": false, "city": "", "neg": 2, "note": "Rental income offsets the fixed costs of ownership, so shared use makes keeping the car cheaper — expanding shared supply by retaining private vehicles."}, "CLD-16": {"n": [61, 22, 10, 67, 30, 24], "e": ["e82", "e83", "e84", "e85", "e86", "e87"], "chain": [["Regulatory permission to reduce mandatory parking", "+", false], ["Developer incentive to include car sharing", "+", false], ["Car sharing provision in new development", "+", false], ["Residents' proximity to a shared vehicle", "-", false], ["Household car ownership", "-", false], ["Evidence base for lower parking standards", "+", false]], "name": "Parking standard and development", "type": "reinforcing", "cat": "supporting", "status": "proposed", "stream": "project-lit", "short": false, "city": "", "neg": 2, "note": "Permission to reduce mandatory parking where car sharing is provided gives developers a construction-cost incentive to include it; realised low ownership then justifies the next reduction."}, "CLD-17": {"n": [34, 40, 79, 88, 73], "e": ["e88", "e89", "e90", "e91", "e92"], "chain": [["Membership and trip volume", "+", false], ["Organisational workload", "+", false], ["Strain on volunteer capacity", "-", false], ["Volunteer availability and continuity", "+", false], ["Service reliability", "+", false]], "name": "Association and volunteer capacity", "type": "balancing", "cat": "limiting", "status": "proposed", "stream": "project-lit", "short": false, "city": "", "neg": 1, "note": "Most Austrian offers are run by non-commercial associations whose binding constraint is organisational workload and the availability of a local champion, not revenue. Success tightens the constraint."}, "CLD-18": {"n": [54, 66, 65, 3, 68, 32], "e": ["e93", "e94", "e95", "e96", "e97", "e98"], "chain": [["Proximity and neighbourhood quality", "+", false], ["Residential desirability", "+", false], ["Rents and property prices", "-", false], ["Affordability for lower-income residents", "+", false], ["Retention of low-car-ownership residents", "+", false], ["Local demand supporting retail and shared mobility", "+", false]], "name": "Proximity and gentrification", "type": "balancing", "cat": "goal-divergent", "status": "proposed", "stream": "project-lit", "short": false, "city": "", "neg": 1, "note": "Improving proximity raises desirability and rents, displacing the low-income, low-car-ownership residents whose presence sustains proximity. Every individual link behaves as intended."}, "CLD-19": {"n": [19, 74, 87, 46], "e": ["e99", "e100", "e101", "e102"], "chain": [["Cost premium of an EV in a shared fleet", "-", false], ["Share of EVs in the shared fleet", "+", false], ["Visibility as decarbonisation infrastructure", "+", false], ["Policy recognition and exemptions", "-", false]], "name": "Electrification cost trap", "type": "reinforcing", "cat": "limiting", "status": "proposed", "stream": "uk-inputs", "short": false, "city": "", "neg": 2, "note": "Shared fleets lead electrification but pay a large per-vehicle premium; as the EV share falls, so does the sector's visibility as decarbonisation infrastructure, and with it the policy exemptions that offset the premium."}};
+var CATDE={"supporting": "Supporting", "limiting": "Limiting", "goal-divergent": "Goal-divergent"}, STREAMDE={"workshop": "Entry-level set (Round 1)", "evaluations": "Municipal evaluations", "project-lit": "Project literature", "uk-inputs": "UK and European inputs", "evidence": "Extended evidence review"};
+var scene=document.getElementById('scene'), svg=document.getElementById('cv'), det=document.getElementById('det');
+var vb=[0,0,2802,2287], drag=null, cur=null, filter='all';
+
+function clear(){
+  scene.classList.remove('filtered');
+  var q=scene.querySelectorAll('.hi'); for(var i=0;i<q.length;i++) q[i].classList.remove('hi');
+  var b=document.querySelectorAll('button.lp.on'); for(var j=0;j<b.length;j++) b[j].classList.remove('on');
+  det.classList.remove('on'); det.innerHTML=''; cur=null;
+}
+function show(id,btn){
+  if(cur===id){clear();return;}
+  clear(); cur=id;
+  var d=L[id]; if(!d) return;
+  scene.classList.add('filtered');
+  for(var i=0;i<d.n.length;i++){var el=document.getElementById('n'+d.n[i]); if(el) el.classList.add('hi');}
+  for(var k=0;k<d.e.length;k++){
+    var e=document.getElementById(d.e[k]); if(e) e.classList.add('hi');
+    var lb=document.getElementById(d.e[k]+'L'); if(lb) lb.classList.add('hi');
+    var dl=document.getElementById(d.e[k]+'D'); if(dl) dl.classList.add('hi');
+  }
+  if(btn) btn.classList.add('on');
+  var ch='';
+  for(var m=0;m<d.chain.length;m++){
+    var c=d.chain[m];
+    ch+=escapeHtml(c[0])+' <span class="'+(c[1]==='-'?'negp':'pos')+'">'+(c[1]==='-'?'−':'+')+'</span>'+(c[2]?' <span title="delay">‖</span>':'')+' → ';
+  }
+  ch+='<em>'+escapeHtml(d.chain[0][0])+'</em>';
+  var tags='<span class="tag'+(d.cat==='goal-divergent'?' gd':'')+'">'+CATDE[d.cat]+'</span>'
+          +'<span class="tag">'+(d.status==='tested'?'discussed in Round 1':'proposed')+'</span>'
+          +'<span class="tag">'+STREAMDE[d.stream]+'</span>'
+          +(d.short?'<span class="tag">Round-2-Shortlist</span>':'')
+          +(d.city?'<span class="tag">'+escapeHtml(d.city)+'</span>':'');
+  det.innerHTML='<h3>'+id+' · '+escapeHtml(d.name)+'</h3>'
+    +'<p class="k">'+tags+'</p>'
+    +'<p class="k">'+d.neg+' negative link(s) of '+d.chain.length+' → '
+    +(d.type==='reinforcing'?'reinforcing (R)':'balancing (B)')+'</p>'
+    +'<p class="ch">'+ch+'</p>'
+    +(d.note?'<p class="nt">'+escapeHtml(d.note)+'</p>':'');
+  det.classList.add('on');
+}
+function showUnion(ids,title,sub){
+  clear(); scene.classList.add('filtered');
+  var seenN={},seenE={};
+  for(var a=0;a<ids.length;a++){var d=L[ids[a]];
+    for(var i=0;i<d.n.length;i++){var el=document.getElementById('n'+d.n[i]); if(el) el.classList.add('hi');}
+    for(var k=0;k<d.e.length;k++){var e=document.getElementById(d.e[k]); if(e) e.classList.add('hi');
+      var lb=document.getElementById(d.e[k]+'L'); if(lb) lb.classList.add('hi');}
+  }
+  det.innerHTML='<h3>'+escapeHtml(title)+'</h3><p class="k">'+escapeHtml(sub)+'</p><p class="ch">'+ids.join(' · ')+'</p>';
+  det.classList.add('on'); cur='__union__';
+}
+function escapeHtml(s){return String(s).replace(/[&<>"]/g,function(c){return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c];});}
+
+var btns=document.querySelectorAll('button.lp');
+for(var i=0;i<btns.length;i++)(function(b){b.addEventListener('click',function(){show(b.dataset.l,b);});})(btns[i]);
+document.getElementById('reset').addEventListener('click',clear);
+
+var chips=document.querySelectorAll('.chip');
+for(var i=0;i<chips.length;i++)(function(c){c.addEventListener('click',function(){
+  for(var j=0;j<chips.length;j++) chips[j].classList.remove('on');
+  c.classList.add('on'); filter=c.dataset.f; applyFilter();
+});})(chips[i]);
+function applyFilter(){
+  clear();
+  var bs=document.querySelectorAll('button.lp');
+  var vis=[];
+  for(var i=0;i<bs.length;i++){
+    var d=L[bs[i].dataset.l], ok=true;
+    if(filter==='validated') ok=(d.status==='tested');
+    else if(filter==='proposed') ok=(d.status==='proposed');
+    else if(filter==='short') ok=d.short;
+    else if(filter==='gd') ok=(d.cat==='goal-divergent');
+    bs[i].style.display= ok?'block':'none';
+    if(ok) vis.push(bs[i].dataset.l);
+  }
+  var grps=document.querySelectorAll('.grp');
+  for(var g=0;g<grps.length;g++){
+    var any=grps[g].querySelectorAll('button.lp:not([style*="none"])').length;
+    grps[g].style.display= any?'block':'none';
+  }
+  if(filter==='gd') showUnion(vis,'Goal-divergent loops','Increase, or leave unchanged, the use of shared mobility while working against fewer private cars.');
+}
+
+function apply(){svg.setAttribute('viewBox',vb.join(' '));}
+svg.addEventListener('wheel',function(ev){ev.preventDefault();
+  var r=svg.getBoundingClientRect(), mx=(ev.clientX-r.left)/r.width, my=(ev.clientY-r.top)/r.height;
+  var k=ev.deltaY>0?1.12:0.89, nw=vb[2]*k, nh=vb[3]*k;
+  if(nw<240||nw>2802*3.2) return;
+  vb[0]+=(vb[2]-nw)*mx; vb[1]+=(vb[3]-nh)*my; vb[2]=nw; vb[3]=nh; apply();},{passive:false});
+svg.addEventListener('mousedown',function(ev){drag=[ev.clientX,ev.clientY];svg.classList.add('drag')});
+window.addEventListener('mouseup',function(){drag=null;svg.classList.remove('drag')});
+window.addEventListener('mousemove',function(ev){ if(!drag)return;
+  var r=svg.getBoundingClientRect();
+  vb[0]-=(ev.clientX-drag[0])*vb[2]/r.width; vb[1]-=(ev.clientY-drag[1])*vb[3]/r.height;
+  drag=[ev.clientX,ev.clientY]; apply();});
+</script></body></html>

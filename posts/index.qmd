@@ -1,0 +1,16 @@
+---
+title: "Notes"
+description: "Project news, events, publications and observations. Filter by project or topic using the categories on the right."
+listing:
+  contents: "*/index.qmd"
+  type: default
+  sort: "date desc"
+  categories: numbered
+  sort-ui: [date, title]
+  filter-ui: true
+  fields: [image, date, title, description, categories]
+  date-format: "D MMM YYYY"
+  feed:
+    title: "Martin Zach – notes"
+    description: "Project news, events, publications and observations by Martin Zach (system dynamics, urban mobility, climate adaptation and mitigation)."
+---

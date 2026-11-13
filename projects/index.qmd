@@ -1,0 +1,11 @@
+---
+title: "Projects"
+description: "Research projects, ongoing and completed. Hobby projects will appear here as well."
+listing:
+  contents: "[!i]*.qmd"
+  type: grid
+  grid-columns: 3
+  sort: "order"
+  fields: [image, title, subtitle, description]
+  image-height: 160px
+---

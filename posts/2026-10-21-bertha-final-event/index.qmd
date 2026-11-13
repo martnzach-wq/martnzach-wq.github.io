@@ -1,0 +1,43 @@
+---
+title: "BERTHA final event: driver types and the acceptance of automated driving"
+description: "Cautious behaviour is accepted by everyone, assertive behaviour has to be justified – results on driver typologies and acceptance presented at the BERTHA final event in Brussels."
+date: 2026-10-21
+image: ../../assets/img/bertha.png
+categories: [BERTHA, Event, Mobility, Automated driving, Driver behaviour]
+---
+
+The Horizon Europe project [BERTHA](https://berthaproject.eu/) (*Behavioural Replication of Human Drivers for CCAM*) held its final event on 21 October 2026 at Les Ateliers des Tanneurs in Brussels. Researchers, industry, policymakers and mobility stakeholders discussed how behavioural models can support the development and validation of connected, cooperative and automated mobility (CCAM). My talk, *Human factors, driver typologies and acceptance*, opened the results block of the afternoon.
+
+The organisers asked every speaker the same question: what changes because BERTHA exists? For human factors, the answer is the following. Before BERTHA, the acceptance of automated driving was usually a single number from a survey of people who had never experienced such a vehicle. BERTHA shows that acceptance depends on how the vehicle behaves, in which situation, and above all on who is affected by it – and it provides the instruments to measure this.
+
+## Eight driver types, built from behaviour
+
+Task 1.2 stratified the European driver population according to driving styles. A survey of about 4,700 drivers in Austria, France, Germany, Portugal and Spain combined questionnaire items with a choice experiment: participants watched a traffic scene that stopped at the critical moment and chose between three ways to react, at four levels of criticality.
+
+- The analysis results in **eight driver types**, defined by behaviour rather than by age or gender.
+- **Every country has all eight types, but in very different mixes.** The *Steady Veteran* accounts for 21% of drivers in France but only 8% in Spain and Portugal; the *Urban Daredevil* is twice as frequent in Spain as in Austria.
+- Drivers **recognise themselves in their type**, with an average self-recognition score of 77 out of 100.
+
+The typology is documented in the public deliverable D1.2 *Stratification of population according to driving styles*.
+
+## Acceptance testing at three sites
+
+Task 5.4 tested how people accept automated vehicles that drive in different styles. The tests took place on the CIDAUT test track (Spain) and in the driving simulators of IBV (Spain) and SEYE (Sweden), with 88 participants and almost 2,800 trials in total.
+
+- Participants **told the three driving styles apart** exactly as designed, at every site and in every driver type.
+- **Acceptance decreases with risk and with the difficulty of the manoeuvre**, from 78 to 65 points across risk levels and from 76 to 59 points across use cases.
+- **Perspective matters most.** Seen as pedestrians, the same participants accepted cautious driving (+2) but clearly rejected assertive driving (−14).
+- **Experiencing the system lowered acceptance** at two of the three sites, contrary to most of the literature.
+- **Driver type alone did not predict acceptance.** The effects point in the expected direction, but the sample per type was too small. Future studies should recruit participants on the basis of the typology.
+
+In short: **cautious behaviour is accepted by everyone; assertive behaviour has to be justified.** Four recommendations derived from these results were agreed with all three test sites and are reported in D5.5.
+
+## My contribution
+
+I led T1.2 (driver typology) and T5.4 (acceptance testing) at AIT, together with the partners IBV, CIDAUT, SEYE, UGE and VED.
+
+## Further reading
+
+- [BERTHA project website](https://berthaproject.eu/)
+- [Event announcement, CCAM Partnership](https://www.ccam.eu/events/save-the-date-bertha-project-final-event-to-showcase-advances-in-driver-behaviour-modelling-for-ccam/)
+- [BERTHA on CORDIS, including public deliverables](https://cordis.europa.eu/project/id/101076360/results)

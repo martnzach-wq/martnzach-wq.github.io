@@ -1,0 +1,46 @@
+---
+title: "Martin Zach"
+page-layout: full
+title-block-banner: false
+listing:
+  - id: latest
+    contents: "posts/*/index.qmd"
+    type: default
+    sort: "date desc"
+    max-items: 5
+    image-placeholder: assets/img/favicon.svg
+    fields: [image, date, title, description, categories]
+    date-format: "D MMM YYYY"
+    feed: false
+  - id: projects
+    contents: "projects/[!i]*.qmd"
+    type: grid
+    grid-columns: 3
+    sort: "order"
+    fields: [image, title, subtitle, description]
+    image-height: 160px
+---
+
+::: {.mz-hero}
+[I am a researcher at [AIT Austrian Institute of Technology](https://www.ait.ac.at/) in Vienna, working on system dynamics models of urban mobility, climate adaptation and mitigation, and how such models can support policy.]{.mz-lead}
+
+[This site collects results and news from ongoing and recent projects, as well as notes and observations that do not fit into a deliverable.]{.mz-sub}
+
+[[About and CV](about.qmd) [Publications](publications.qmd) [ORCID](https://orcid.org/0000-0002-6487-1468) [LinkedIn](https://www.linkedin.com/in/martin-zach-571bb56) [GitHub](https://github.com/martnzach-wq) [RSS feed](posts/index.xml)]{.mz-links}
+:::
+
+::: {.mz-section-head}
+## Latest
+[All notes →](posts/index.qmd)
+:::
+
+::: {#latest}
+:::
+
+::: {.mz-section-head}
+## Projects
+[All projects →](projects/index.qmd)
+:::
+
+::: {#projects}
+:::

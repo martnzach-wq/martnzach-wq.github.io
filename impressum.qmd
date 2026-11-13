@@ -1,0 +1,18 @@
+---
+title: "Impressum & privacy"
+---
+
+## Offenlegung gemäß § 25 Mediengesetz
+
+Medieninhaber: Martin Zach, Augentrostgasse 3, 1220 Wien, Österreich  
+Kontakt: <martn.zach@gmail.com>
+
+Grundlegende Richtung: Persönliche Website mit Informationen zu Forschungsprojekten, Publikationen und Beobachtungen des Medieninhabers.
+
+## Privacy
+
+This website does not use cookies, tracking or analytics. Fonts are served from this site; no data is sent to Google Fonts or other third parties. The site is hosted on GitHub Pages, which processes server log data (e.g. IP addresses) to deliver the site; see the [GitHub General Privacy Statement](https://docs.github.com/en/site-policy/privacy-policies/github-general-privacy-statement).
+
+## EU funding
+
+Some of the work presented on this site received funding from the European Union's Horizon Europe research and innovation programme (KNOWING, grant agreement No 101056841; BERTHA, grant agreement No 101076360) and from the Driving Urban Transitions (DUT) Partnership (SASMAP-15mC). Views and opinions expressed are those of the author only.

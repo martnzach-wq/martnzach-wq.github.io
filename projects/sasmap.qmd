@@ -1,0 +1,39 @@
+---
+title: "SASMAP-15mC"
+subtitle: "Driving Urban Transitions (DUT) · 2025–2028 · ongoing"
+description: "A systems approach to shared mobility, accessibility and proximity in the 15-minute city – case studies in Bristol, Graz and Helsingborg."
+image: ../assets/img/sasmap.jpg
+order: 1
+categories: [SASMAP-15mC, Mobility, Shared mobility, 15-minute city, System dynamics]
+listing:
+  contents: "../posts/*/index.qmd"
+  include:
+    categories: "SASMAP-15mC"
+  type: default
+  sort: "date desc"
+  fields: [date, title, description]
+  date-format: "D MMM YYYY"
+---
+
+SASMAP-15mC (*Systems Approach to Shared Mobility, Accessibility and Proximity for 15 Minute Cities*) builds an evidence base for a step change in car sharing as an alternative to private car ownership. The project combines system analysis, household-level mobility data, quantitative modelling and co-design in living labs in Bristol (UK), Graz (Austria) and Helsingborg (Sweden).
+
+::: {.mz-facts}
+Funding
+: DUT Partnership (Call 2024); Austrian part funded by FFG
+
+Duration
+: December 2025 – May 2028
+
+Coordinator
+: University of the West of England (UWE Bristol)
+
+My role
+: Lead of work package 2 – qualitative system analysis: stakeholder mapping, causal loop diagrams (CLDs) and leverage points
+
+Interactive
+: [Consolidated causal loop diagram](../assets/interactive/sasmap-cld.html)
+:::
+
+![](../assets/img/logos/dut-eu-cofunded.png){width=300px fig-alt="Driving Urban Transitions Partnership, co-funded by the European Union"}
+
+## Related notes

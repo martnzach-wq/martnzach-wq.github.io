@@ -1,0 +1,52 @@
+project:
+  type: website
+  output-dir: _site
+  resources:
+    - assets/fonts/*
+    - assets/interactive/*
+    - assets/img/logos/*
+
+website:
+  title: "Martin Zach"
+  description: "Research on system dynamics, urban mobility and climate adaptation and mitigation – projects, notes and observations."
+  site-url: "https://martnzach-wq.github.io"   # later: own domain
+  favicon: assets/img/favicon.svg
+  open-graph: true
+  search:
+    location: navbar
+    type: overlay
+  navbar:
+    left:
+      - text: Notes
+        href: posts/index.qmd
+      - text: Projects
+        href: projects/index.qmd
+      - text: Publications
+        href: publications.qmd
+      - text: About
+        href: about.qmd
+    right:
+      - icon: rss
+        href: posts/index.xml
+        aria-label: RSS feed
+  page-footer:
+    left: "© 2026 Martin Zach"
+    right:
+      - text: Impressum & privacy
+        href: impressum.qmd
+      - text: RSS
+        href: posts/index.xml
+
+format:
+  html:
+    theme:
+      light: [cosmo, assets/theme.scss, assets/light.scss]
+      dark: [cosmo, assets/theme.scss, assets/dark.scss]
+    respect-user-color-scheme: true
+    css: assets/fonts.css
+    include-in-header:
+      text: |
+        <link rel="alternate" type="application/rss+xml" title="Martin Zach – notes" href="https://martnzach-wq.github.io/posts/index.xml">
+    toc: false
+    smooth-scroll: true
+    lang: en-GB
