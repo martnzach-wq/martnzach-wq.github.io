@@ -1,5 +1,7 @@
 ---
 title: "Martin Zach"
+description: "Martin Zach – researcher at AIT Austrian Institute of Technology, Vienna, working on system dynamics models of urban mobility and climate adaptation and mitigation."
+image: assets/img/og-home.png
 page-layout: full
 title-block-banner: false
 listing:
@@ -20,6 +22,10 @@ listing:
     fields: [image, title, subtitle, description]
     image-height: 160px
 ---
+
+```{=html}
+<style>#title-block-header .description{display:none}</style>
+```
 
 ::: {.mz-hero}
 [I am a researcher at [AIT Austrian Institute of Technology](https://www.ait.ac.at/) in Vienna, working on system dynamics models of urban mobility, climate adaptation and mitigation, and how such models can support policy.]{.mz-lead}

@@ -9,7 +9,7 @@ project:
 website:
   title: "Martin Zach"
   description: "Research on system dynamics, urban mobility and climate adaptation and mitigation – projects, notes and observations."
-  site-url: "https://martnzach-wq.github.io"   # later: own domain
+  site-url: "https://mzach.eu"
   favicon: assets/img/favicon.svg
   open-graph: true
   search:
@@ -46,7 +46,13 @@ format:
     css: assets/fonts.css
     include-in-header:
       text: |
-        <link rel="alternate" type="application/rss+xml" title="Martin Zach – notes" href="https://martnzach-wq.github.io/posts/index.xml">
+        <link rel="alternate" type="application/rss+xml" title="Martin Zach – notes" href="https://mzach.eu/posts/index.xml">
+        <script type="application/ld+json">
+        {"@context":"https://schema.org","@type":"Person","name":"Martin Zach","url":"https://mzach.eu/",
+         "jobTitle":"Researcher","worksFor":{"@type":"Organization","name":"AIT Austrian Institute of Technology","url":"https://www.ait.ac.at/"},
+         "knowsAbout":["System dynamics","Urban mobility","Climate adaptation","Climate mitigation","Shared mobility"],
+         "sameAs":["https://orcid.org/0000-0002-6487-1468","https://www.linkedin.com/in/martin-zach-571bb56","https://github.com/martnzach-wq"]}
+        </script>
     toc: false
     smooth-scroll: true
     lang: en-GB
