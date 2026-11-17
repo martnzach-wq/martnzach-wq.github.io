@@ -1,0 +1,31 @@
+---
+title: "GREENGAGE"
+subtitle: "Horizon Europe · 2023–2025 · completed"
+description: "Engaging citizens, mobilising technology, delivering the Green Deal – a systems-thinking approach to inclusive governance of urban climate policies."
+image: ../assets/img/greengage.png
+order: 6
+categories: [GREENGAGE, Climate adaptation and mitigation, Governance, System dynamics]
+---
+
+GREENGAGE supports cities and regions in designing climate mitigation and adaptation policies together with their citizens. Citizen Observatories on mobility, air quality and healthy living were set up in pilot sites in Bristol, Copenhagen, North Brabant and Turano & Gerace. Their observations are combined with Earth observation, in-situ and socio-economic data.
+
+I led the task on a governance model for citizen-based co-creation of urban climate policies. The model was developed with a systems-thinking approach, which is published in Habibi et al. (2025), *A systems thinking approach to inclusive governance*, [doi:10.1007/s44282-025-00317-y](https://doi.org/10.1007/s44282-025-00317-y).
+
+::: {.mz-facts}
+Funding
+: Horizon Europe, grant agreement [101086530](https://cordis.europa.eu/project/id/101086530)
+
+Duration
+: January 2023 – December 2025
+
+Coordinator
+: AIT Austrian Institute of Technology
+
+My role
+: Task lead – systems-thinking approach to a governance model
+
+Website
+: [greengage-project.eu](https://www.greengage-project.eu/)
+:::
+
+![](../assets/img/logos/eu-funded.png){width=220px fig-alt="Funded by the European Union"}

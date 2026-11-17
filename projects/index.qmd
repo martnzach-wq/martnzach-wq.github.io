@@ -1,7 +1,8 @@
 ---
 title: "Projects"
-description: "Research projects, ongoing and completed. Hobby projects will appear here as well."
+description: "Research projects, ongoing and completed, and code I publish on GitHub."
 listing:
+  id: projects-grid
   contents: "[!i]*.qmd"
   type: grid
   grid-columns: 3
@@ -9,3 +10,19 @@ listing:
   fields: [image, title, subtitle, description]
   image-height: 160px
 ---
+
+::: {#projects-grid}
+:::
+
+## Code and software
+
+Models and analysis code are published on [GitHub](https://github.com/martnzach-wq).
+
+**[KNOWING integrated SD model](https://github.com/martnzach-wq/KNOWING-integrated-SD-model)**
+: Integrated system dynamics model for the KNOWING demonstrator Granollers, written in Python. It couples sub-models for mobility (logit-based mode choice, calibrated against the local travel survey), energy demand and energy supply, and computes total greenhouse gas emissions for pathways from 2019 to 2050. See also the [KNOWING project](knowing.qmd).
+
+**[Residual CO₂ emissions in 1.5 °C pathways](https://github.com/martnzach-wq/ar6-residual-emissions)**
+: Analysis of residual gross CO₂ emissions by sector in 2050 in the AR6 scenarios of category C1, based on the AR6 Scenarios Database hosted by IIASA and the pyam package. It includes consistency checks of the reported aggregates and a comparison across model families (MESSAGEix-GLOBIOM, REMIND-MAgPIE, IMAGE). The notebook reproduces all results and figures.
+
+**[regsim – regional indicator similarity and estimation](https://github.com/martnzach-wq/CollaborativeFilteringFramework)** · *in development*
+: Python package for similarity and estimation of indicators observed at several regional levels (NUTS-0 to LAU) with incomplete data: it fills data gaps, finds similar regions and indicators, and builds typologies. The core is a hierarchical, typed low-rank matrix factorisation (collaborative filtering), compared against baselines such as kNN, SoftImpute and MissForest; values at coarse levels constrain the estimates at finer levels. A transfer-specific similarity identifies donor regions for transferring calibrated SD parameters from the four KNOWING demonstrators. The package builds on the collaborative filtering approach of LEVITATE and the transferability framework of KNOWING, reads Eurostat, Statistik Austria and KNOWING data, and provides a command-line interface, a REST service and an interactive explorer. Licence: Apache-2.0.

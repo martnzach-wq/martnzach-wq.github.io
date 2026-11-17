@@ -2,9 +2,9 @@
 title: "About"
 ---
 
-I am a physicist (PhD in computational physics) and systems modeller at [AIT Austrian Institute of Technology](https://www.ait.ac.at/) in Vienna. After about twenty years in industry – software development, European research projects and the leadership of international teams – I have worked since 2019 on climate impacts, adaptation and mitigation in urban and regional systems. My focus is on system dynamics (SD) modelling and its interfaces to climate and sector models for energy, transport and other domains, and on turning modelling results into decision support for stakeholders.
+I am a trained physicist (PhD in computational physics) and systems modeller at [AIT Austrian Institute of Technology](https://www.ait.ac.at/) in Vienna. After about twenty years in industry – software development, European research projects and the leadership of international teams – I have worked since 2019 on climate impacts, adaptation and mitigation in urban and regional systems. My focus is on system dynamics (SD) modelling and its interfaces to climate and sector models for energy, transport and other domains, and on turning modelling results into decision support for stakeholders.
 
-Contact: <martn.zach@gmail.com> · [ORCID 0000-0002-6487-1468](https://orcid.org/0000-0002-6487-1468) · [LinkedIn](https://www.linkedin.com/in/martin-zach-571bb56) · [GitHub](https://github.com/martnzach-wq) · [Publications](publications.qmd)
+Contact: <martn.zach@gmail.com> · [ORCID 0000-0002-6487-1468](https://orcid.org/0000-0002-6487-1468) · [LinkedIn](https://www.linkedin.com/in/martin-zach-571bb56) · [GitHub](https://github.com/martnzach-wq) · [Publications](publications.qmd) · [Kurzprofil (Deutsch)](#kurzprofil)
 
 ## Research experience
 
@@ -13,14 +13,15 @@ Contact: <martn.zach@gmail.com> · [ORCID 0000-0002-6487-1468](https://orcid.org
 *Climate impacts, adaptation and mitigation*
 
 - **[KNOWING](projects/knowing.qmd)** (Horizon Europe, 2022–2026) – lead of WP2 *Develop Modelling Framework* and member of the coordination team. Architecture and implementation of the Impact Interaction Model Framework: an SD framework with interfaces to more than ten domain models (regional climate, climate hazards, energy, transport and others), stepwise cross-calibration against domain model results, and concepts for backcasting and transferability. The SD models are open source.
-- **GREENGAGE** (Horizon Europe, 2023–2025) – task lead. Systems-thinking approach to a governance model for citizen-based co-creation of urban climate policies.
-- **check4zero** (FFG / BMIMI, 2024–2025) – principal investigator. Concept and prototype of a low-threshold decision-support tool for prioritising mobility measures in climate-neutral cities, developed with three Austrian municipalities.
+- **[SHINE](projects/shine.qmd)** (ACRP, 2026–2028) – support of the impact model (systemic modelling). Heat impacts on mobile long-term care in Vienna and the effect of organisational and urban adaptation, in particular greening.
+- **[GREENGAGE](projects/greengage.qmd)** (Horizon Europe, 2023–2025) – task lead. Systems-thinking approach to a governance model for citizen-based co-creation of urban climate policies.
+- **[check4zero](projects/check4zero.qmd)** (FFG / BMIMI, 2024–2025) – project lead. Concept and prototype of a low-threshold decision-support tool for prioritising mobility measures in climate-neutral cities, developed with three Austrian cities.
 
 *Systems analysis of mobility and transport*
 
 - **[SASMAP-15mC](projects/sasmap.qmd)** (Driving Urban Transitions, 2025–2028) – lead of WP2. Qualitative systems analysis of shared mobility in 15-minute cities, with causal loop diagrams developed through group model building in Graz, Bristol and Helsingborg.
 - **[BERTHA](projects/bertha.qmd)** (Horizon Europe, 2023–2026) – task lead for driver characterisation and acceptance testing: survey of about 4,700 drivers in five countries, data-driven driver typology, acceptance tests at three sites with 88 participants and almost 2,800 trials.
-- **LEVITATE** (Horizon 2020, 2019–2022) – work package lead and principal investigator. SD model for forecasting the societal impacts of connected and automated vehicles, integrated into a web-based policy support tool for cities.
+- **[LEVITATE](projects/levitate.qmd)** (Horizon 2020, 2019–2022) – work package lead and AIT lead. SD model for forecasting the societal impacts of connected and automated vehicles, integrated into a web-based policy support tool for cities.
 
 **Research Assistant / Postdoctoral Research Fellow**, Institute for Nuclear Physics, TU Wien · 1995–1998
 
@@ -48,8 +49,14 @@ Contact: <martn.zach@gmail.com> · [ORCID 0000-0002-6487-1468](https://orcid.org
 
 ## Methods and skills
 
-- **Modelling:** system dynamics (qualitative and quantitative), causal loop diagrams, group model building, interface design between models, cross-calibration and validation, scenario and policy analysis, Monte Carlo simulation
+- **Modelling:** system dynamics (qualitative and quantitative), causal loop diagrams, interface design between models, cross-calibration and validation, scenario and policy analysis, Monte Carlo simulation
+- **Stakeholder processes and policy:** group model building, facilitation of workshops with cities and stakeholders (SASMAP-15mC, check4zero), policy briefs (KNOWING and NEVERMORE)
 - **Data and statistics:** survey design and analysis, clustering, discrete-choice modelling, non-parametric testing
-- **Programming:** Vensim, Python, C++ and Java
-- **Research management:** work package and task leadership, consortium coordination, Horizon Europe proposals; reviewer for the International System Dynamics Conference (2025); member of the System Dynamics Society
+- **Programming:** Python (pandas, NumPy, pyam), C++, Java – code on [GitHub](https://github.com/martnzach-wq) and in the [projects overview](projects/index.qmd#code-and-software)
+- **Modelling tools:** Vensim
+- **Research management:** project, work package and task leadership, consortium coordination, proposals for Horizon Europe and national programmes (FFG, ACRP); reviewer for the International System Dynamics Conference (2025); member of the System Dynamics Society
 - **Languages:** German (native), English (C1/C2), Russian (A2)
+
+## Kurzprofil (Deutsch) {#kurzprofil lang="de"}
+
+Ich bin ausgebildeter Physiker (Dr. techn., TU Wien) und arbeite seit 2019 am AIT Austrian Institute of Technology in Wien. Im Mittelpunkt meiner Arbeit stehen System-Dynamics-Modelle zu Klimafolgen sowie zu Anpassungs- und Klimaschutzmaßnahmen in Städten und Regionen, mit Schnittstellen zu Energie- und Verkehrsmodellen. Ich leite Arbeitspakete in EU-Projekten (KNOWING, SASMAP-15mC), habe nationale Projekte wie check4zero gemeinsam mit österreichischen Städten geleitet und arbeite im ACRP-Projekt SHINE an der Modellierung von Hitzeauswirkungen auf die mobile Langzeitpflege in Wien mit. Davor war ich rund 20 Jahre bei Siemens bzw. Atos in Softwareentwicklung, Lösungsarchitektur und der Leitung internationaler Teams tätig.

@@ -37,4 +37,4 @@ The demonstrator regions presented their challenges and results, from heat stres
 
 - [KNOWING project website](https://knowing-climate.eu/)
 - [Report on the final event, *Open Access Government*](https://www.openaccessgovernment.org/knowing-how-to-navigate-towards-climate-neutral-resilient-regional-future/209413/)
-- [Integrated SD model (Granollers, Naples, Tallinn) on GitHub](https://github.com/martnzach-wq/KNOWING-integrated-SD-model)
+- [Integrated SD model for Granollers on GitHub](https://github.com/martnzach-wq/KNOWING-integrated-SD-model)

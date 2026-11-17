@@ -3,7 +3,7 @@ title: "BERTHA"
 subtitle: "Horizon Europe · 2023–2026 · completed"
 description: "Behavioural replication of human drivers for connected, cooperative and automated mobility (CCAM)."
 image: ../assets/img/bertha.png
-order: 3
+order: 4
 categories: [BERTHA, Mobility, Automated driving, Driver behaviour]
 listing:
   contents: "../posts/*/index.qmd"

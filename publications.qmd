@@ -31,9 +31,9 @@ description: "Selected publications and conference contributions. The full list 
 
 - Faber, M., Ivanov, A. N., Troitskaya, N. I., Zach, M. (2000). Path integral representation for Wilson loops and the non-Abelian Stokes theorem. *Physical Review D* 62, 025019. [doi:10.1103/PhysRevD.62.025019](https://doi.org/10.1103/PhysRevD.62.025019)
 - Zach, M., Faber, M., Skala, P. (1998). Investigating confinement in dually transformed U(1) lattice gauge theory. *Physical Review D* 57, 123. [doi:10.1103/PhysRevD.57.123](https://doi.org/10.1103/PhysRevD.57.123)
-- Zach, M., Faber, M., Skala, P. (1998). Flux tubes and their interaction in U(1) lattice gauge theory. *Nuclear Physics B*. [doi:10.1016/S0550-3213(98)00363-0](https://doi.org/10.1016/S0550-3213(98)00363-0)
-- Skala, P., Faber, M., Zach, M. (1998). On the influence of colour magnetic currents on the confining properties of SU(3) lattice gauge theory. *Physics Letters B*. [doi:10.1016/S0370-2693(98)00186-5](https://doi.org/10.1016/S0370-2693(98)00186-5)
-- Skala, P., Faber, M., Zach, M. (1997). Colour magnetic currents and the dual London equation in SU(3) lattice gauge theory. *Nuclear Physics B*. [doi:10.1016/S0550-3213(97)00127-2](https://doi.org/10.1016/S0550-3213(97)00127-2)
-- Zach, M., Faber, M., Kainz, W., Skala, P. (1995). Monopole currents in U(1) lattice gauge theory: a comparison to an effective model based on dual superconductivity. *Physics Letters B*. [doi:10.1016/0370-2693(95)01013-G](https://doi.org/10.1016/0370-2693(95)01013-G)
+- Zach, M., Faber, M., Skala, P. (1998). Flux tubes and their interaction in U(1) lattice gauge theory. *Nuclear Physics B* 529, 505–522. [doi:10.1016/S0550-3213(98)00363-0](https://doi.org/10.1016/S0550-3213(98)00363-0)
+- Skala, P., Faber, M., Zach, M. (1998). On the influence of colour magnetic currents on the confining properties of SU(3) lattice gauge theory. *Physics Letters B* 424, 355–361. [doi:10.1016/S0370-2693(98)00186-5](https://doi.org/10.1016/S0370-2693(98)00186-5)
+- Skala, P., Faber, M., Zach, M. (1997). Colour magnetic currents and the dual London equation in SU(3) lattice gauge theory. *Nuclear Physics B* 494, 293–311. [doi:10.1016/S0550-3213(97)00127-2](https://doi.org/10.1016/S0550-3213(97)00127-2)
+- Zach, M., Faber, M., Kainz, W., Skala, P. (1995). Monopole currents in U(1) lattice gauge theory: a comparison to an effective model based on dual superconductivity. *Physics Letters B*, 325–331. [doi:10.1016/0370-2693(95)01013-G](https://doi.org/10.1016/0370-2693(95)01013-G)
 
 Further publications from these areas (1995–2011) are listed on [ORCID](https://orcid.org/0000-0002-6487-1468).

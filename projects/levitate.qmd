@@ -1,0 +1,31 @@
+---
+title: "LEVITATE"
+subtitle: "Horizon 2020 · 2018–2022 · completed"
+description: "Societal level impacts of connected and automated vehicles – a system dynamics model for the LEVITATE Policy Support Tool."
+image: ../assets/img/levitate.png
+order: 7
+categories: [LEVITATE, Mobility, Automated driving, System dynamics]
+---
+
+LEVITATE (*Societal Level Impacts of Connected and Automated Vehicles*) developed a framework and methods to assess and forecast the impacts of connected and automated transport systems on individuals, the mobility system and society. The results were integrated into a web-based Policy Support Tool that helps cities and authorities to evaluate measures against their policy objectives.
+
+At AIT, I developed a system dynamics (SD) model that forecasts the systemic and wider impacts of connected and automated mobility over long time horizons. The model was integrated into the Policy Support Tool.
+
+::: {.mz-facts}
+Funding
+: Horizon 2020, grant agreement [824361](https://cordis.europa.eu/project/id/824361)
+
+Duration
+: December 2018 – May 2022
+
+Coordinator
+: Loughborough University
+
+My role
+: Work package lead and AIT lead; system dynamics model for the Policy Support Tool
+
+Results
+: [Final technical report (PDF)](https://www.connectedautomateddriving.eu/wp-content/uploads/2023/11/Levitate-Final-Technical-Report-13-Sep-2022-2.pdf) · [Policy Support Tool user guide (PDF)](https://www.connectedautomateddriving.eu/wp-content/uploads/2023/11/Levitate-D2.6-Policy-Support-Tool-user-guide-update-31-May-2022.pdf) · [Publications](../publications.qmd)
+:::
+
+![](../assets/img/logos/eu-funded.png){width=220px fig-alt="Funded by the European Union"}

@@ -3,7 +3,7 @@ title: "KNOWING"
 subtitle: "Horizon Europe · 2022–2026 · completed"
 description: "Integrated climate adaptation and mitigation pathways for four European regions, built on a system dynamics modelling framework."
 image: ../assets/img/knowing.png
-order: 2
+order: 3
 categories: [KNOWING, Climate adaptation and mitigation, System dynamics, Mobility]
 listing:
   contents: "../posts/*/index.qmd"

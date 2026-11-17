@@ -1,0 +1,32 @@
+---
+title: "SHINE"
+subtitle: "ACRP (Climate and Energy Fund) · 2026–2028 · ongoing"
+description: "Social and health impacts of climate change adaptation efforts on long-term care – heat, mobile care and urban greening in Vienna."
+image: ../assets/img/shine.png
+order: 2
+categories: [SHINE, Climate adaptation and mitigation, Heat, Health]
+---
+
+SHINE (*Social and Health Impacts of Climate Change Adaptation Efforts on Long-Term Care*) analyses how heat affects mobile long-term care in Vienna – both the people receiving care and the care staff, who are themselves strongly exposed to heat. The project assesses whether organisational adaptation and urban measures, above all greening (nature-based solutions), can offset these effects.
+
+The project combines primary data, indicators, climate simulations and organisational analyses. New climate and heat risk maps for Vienna are used to quantify the burden on mobile care. A baseline scenario is compared with an intervention scenario that includes nature-based urban planning solutions.
+
+::: {.mz-facts}
+Funding
+: Climate and Energy Fund (Klima- und Energiefonds), Austrian Climate Research Programme (ACRP), 17th call
+
+Duration
+: January 2026 – December 2028
+
+Coordinator
+: AIT Austrian Institute of Technology
+
+Partners
+: WU Vienna, Competence Centre for Nonprofit Organisations and Social Entrepreneurship; Medical University of Vienna, Center for Public Health, Department of Environmental Health
+
+My role
+: Support of the impact model (systemic modelling)
+
+Links
+: [AIT project page](https://www.ait.ac.at/themen/climate-resilient-urban-pathways/projekte/shine) · [FFG project database](https://projekte.ffg.at/projekt/5136209) · [WU project page](https://www.wu.ac.at/npocompetence/forschung/projekte/2026/social-and-health-impacts-of-climate-change-adaptation-efforts-on-long-term-care-shine)
+:::
