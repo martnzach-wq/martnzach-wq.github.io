@@ -5,6 +5,14 @@ description: "Decision and process support for prioritising mobility measures in
 image: ../assets/img/check4zero.png
 order: 5
 categories: [check4zero, Mobility, Climate adaptation and mitigation, System dynamics]
+listing:
+  contents: "../posts/*/index.qmd"
+  include:
+    categories: "check4zero"
+  type: default
+  sort: "date desc"
+  fields: [date, title, description]
+  date-format: "D MMM YYYY"
 ---
 
 Cities and municipalities often find it difficult to compare the effects of mobility measures on the way to climate neutrality and to prioritise them, because detailed data and transport models are not available everywhere. check4zero developed the building blocks for a low-threshold, comparative impact assessment.
@@ -35,3 +43,7 @@ My role
 Results
 : [Final report (German, PDF)](https://projekte.ffg.at/anhang/6819f428eeb71_check4zero_Ergebnisbericht_1.1.pdf) · [FFG project database](https://projekte.ffg.at/projekt/5120811)
 :::
+
+![](../assets/img/logos/bmimi.png){width=230px fig-alt="Bundesministerium Innovation, Mobilität und Infrastruktur"} ![](../assets/img/logos/ffg.png){width=140px fig-alt="FFG"}
+
+## Related notes

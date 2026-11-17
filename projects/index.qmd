@@ -16,7 +16,7 @@ listing:
 
 ## Code and software
 
-Models and analysis code are published on [GitHub](https://github.com/martnzach-wq).
+A recent selection of models and analysis code. All public repositories are on [GitHub](https://github.com/martnzach-wq).
 
 **[KNOWING integrated SD model](https://github.com/martnzach-wq/KNOWING-integrated-SD-model)**
 : Integrated system dynamics model for the KNOWING demonstrator Granollers, written in Python. It couples sub-models for mobility (logit-based mode choice, calibrated against the local travel survey), energy demand and energy supply, and computes total greenhouse gas emissions for pathways from 2019 to 2050. See also the [KNOWING project](knowing.qmd).

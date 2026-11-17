@@ -1,0 +1,25 @@
+---
+title: "check4zero completed: a concept for low-threshold impact assessment of mobility measures"
+description: "The project check4zero has been completed. Its results were presented to the participating cities and experts, and the final report has been submitted to the FFG."
+date: 2025-04-11
+image: ../../assets/img/check4zero.png
+categories: [check4zero, Publication, Workshop, Mobility, System dynamics]
+---
+
+The national research project [check4zero](../../projects/check4zero.qmd), funded by the FFG within the FTI-Schwerpunkt Mobilitätswende of the BMIMI, has been successfully completed. Over twelve months, AIT, Grazer Energieagentur, Rupprecht Consult and Umweltbundesamt developed a concept for how cities and municipalities can compare and prioritise mobility measures on the way to climate neutrality – even where detailed data and transport models are not available.
+
+## Results presented to stakeholders
+
+The results were presented on 24 February 2025 in a digital results workshop, combined with the final expert meeting. Representatives of the three participating cities – Linz, Dornbirn and Gratwein – had accompanied the project from the start: in workshops on their current processes and support needs in summer 2024, and in feedback interviews in January 2025, in which they tested a mock-up of the tool themselves. Intermediate results were also shown in a poster presentation at the FTI Forum Mobilität in November 2024.
+
+## What check4zero delivers
+
+- a **knowledge base** on sustainability indicators, data requirements and data sources, types of measures and their local feasibility, and eleven profiles of existing assessment tools,
+- a **tool concept** for quick, replicable impact assessment with minimal input data, together with a **mock-up** for qualitative and semi-quantitative assessment, and
+- a **simplified system dynamics approach** that captures the direction and order of magnitude of interactions between measures and indicators, including conflicts and synergies.
+
+The stakeholder feedback confirms the need for such a tool. A tool for all Austrian cities and municipalities would best be developed as a web application; alternatively, the approach can be offered as a service that gives cities a first estimate of the effects of planned measures. Together with the results of the parallel project LMI-Sustain, check4zero provides the basis for this next step.
+
+## Final report
+
+The final report (*Ergebnisbericht*, in German) has been submitted to the FFG and is publicly available: [check4zero Ergebnisbericht (PDF, 150 pages)](https://projekte.ffg.at/anhang/6819f428eeb71_check4zero_Ergebnisbericht_1.1.pdf).
