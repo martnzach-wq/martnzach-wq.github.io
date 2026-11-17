@@ -2,11 +2,13 @@
 title: "BERTHA final event: driver types and the acceptance of automated driving"
 description: "Cautious behaviour is accepted by everyone, assertive behaviour has to be justified – results on driver typologies and acceptance presented at the BERTHA final event in Brussels."
 date: 2026-10-21
-image: ../../assets/img/bertha.png
+image: ../../assets/img/bertha-final-event.jpg
 categories: [BERTHA, Event, Mobility, Automated driving, Driver behaviour]
 ---
 
 The Horizon Europe project [BERTHA](https://berthaproject.eu/) (*Behavioural Replication of Human Drivers for CCAM*) held its final event on 21 October 2026 at Les Ateliers des Tanneurs in Brussels. Researchers, industry, policymakers and mobility stakeholders discussed how behavioural models can support the development and validation of connected, cooperative and automated mobility (CCAM). My talk, *Human factors, driver typologies and acceptance*, opened the results block of the afternoon.
+
+![The BERTHA consortium at the final conference in Brussels, 21 October 2026.](../../assets/img/bertha-final-event.jpg){fig-alt="Group photo of the BERTHA project partners in front of the screen announcing the BERTHA Project Final Conference, 21 October 2026, Brussels."}
 
 The organisers asked every speaker the same question: what changes because BERTHA exists? For human factors, the answer is the following. Before BERTHA, the acceptance of automated driving was usually a single number from a survey of people who had never experienced such a vehicle. BERTHA shows that acceptance depends on how the vehicle behaves, in which situation, and above all on who is affected by it – and it provides the instruments to measure this.
 
