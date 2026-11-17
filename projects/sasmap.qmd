@@ -2,7 +2,7 @@
 title: "SASMAP-15mC"
 subtitle: "Driving Urban Transitions (DUT) · 2025–2028 · ongoing"
 description: "A systems approach to shared mobility, accessibility and proximity in the 15-minute city – case studies in Bristol, Graz and Helsingborg."
-image: ../assets/img/sasmap.jpg
+image: ../assets/img/sasmap-tile.png
 order: 1
 categories: [SASMAP-15mC, Mobility, Shared mobility, 15-minute city, System dynamics]
 listing:
