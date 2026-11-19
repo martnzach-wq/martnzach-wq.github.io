@@ -49,7 +49,7 @@ format:
       text: |
         <link rel="alternate" type="application/rss+xml" title="Martin Zach – notes" href="https://mzach.eu/posts/index.xml">
         <script type="application/ld+json">
-        {"@context":"https://schema.org","@type":"Person","name":"Martin Zach","url":"https://mzach.eu/",
+        {"@context":"https://schema.org","@type":"Person","name":"Martin Zach","url":"https://mzach.eu/","image":"https://mzach.eu/assets/img/martin-zach.jpg",
          "jobTitle":"Researcher","worksFor":{"@type":"Organization","name":"AIT Austrian Institute of Technology","url":"https://www.ait.ac.at/"},
          "knowsAbout":["System dynamics","Urban mobility","Climate adaptation","Climate mitigation","Shared mobility"],
          "sameAs":["https://orcid.org/0000-0002-6487-1468","https://www.linkedin.com/in/martin-zach-571bb56","https://github.com/martnzach-wq"]}

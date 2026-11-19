@@ -2,6 +2,8 @@
 title: "About"
 ---
 
+<img src="assets/img/martin-zach.jpg" class="mz-portrait" alt="Portrait of Martin Zach" width="640" height="800">
+
 I am a trained physicist (PhD in computational physics) and systems modeller at [AIT Austrian Institute of Technology](https://www.ait.ac.at/) in Vienna. After about twenty years in industry – software development, European research projects and the leadership of international teams – I have worked since 2019 on climate impacts, adaptation and mitigation in urban and regional systems. My focus is on system dynamics (SD) modelling and its interfaces to climate and sector models for energy, transport and other domains, and on turning modelling results into decision support for stakeholders.
 
 Contact: <martn.zach@gmail.com> · [ORCID 0000-0002-6487-1468](https://orcid.org/0000-0002-6487-1468) · [LinkedIn](https://www.linkedin.com/in/martin-zach-571bb56) · [GitHub](https://github.com/martnzach-wq) · [Publications](publications.qmd) · [Kurzprofil (Deutsch)](#kurzprofil)
