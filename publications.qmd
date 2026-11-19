@@ -5,7 +5,7 @@ description: "Selected publications and conference contributions. The full list 
 
 ## Submitted and in preparation
 
-- Jaroszweski, D., Zach, M., Bügelmayer-Blaschek, M., Chapman, L., Millonig, A., Leone, M., Turchi, A., Hainoun, A., Stortecky, S., Nocerino, G. (2026). Understanding complex interactions between climate mitigation and adaptation measures – a methodological framework. Submitted to *One Earth*.
+- Jaroszweski, D., Zach, M., Bügelmayer-Blaschek, M., Chapman, L., Millonig, A., Leone, M., Turchi, A., Hainoun, A., Stortecky, S., Nocerino, G. (2026). Understanding complex interactions between climate mitigation and adaptation measures – a methodological framework. Submitted to *One Earth*. Preprint: [doi:10.5281/zenodo.24364547](https://doi.org/10.5281/zenodo.24364547)
 - Zach, M., et al. (in preparation). An expandable system dynamics framework for integrated assessment of climate adaptation and mitigation pathways.
 
 ## Climate, systems modelling and mobility (since 2019)

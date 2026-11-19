@@ -31,6 +31,9 @@ My role
 
 Model
 : [Integrated SD model on GitHub](https://github.com/martnzach-wq/KNOWING-integrated-SD-model)
+
+Publications
+: [Methodological framework for climate mitigation–adaptation interactions (preprint)](https://doi.org/10.5281/zenodo.24364547) · [TRA 2026 paper](https://doi.org/10.1007/978-3-032-37170-6_145) · [Policy brief with NEVERMORE](https://knowing-climate.eu/wp-content/uploads/2026/06/Policy-brief-NEVERMORE-and-KNOWING-Modelling.pdf) · [KNOWING community on Zenodo](https://zenodo.org/communities/knowing)
 :::
 
 ![](../assets/img/logos/eu-funded.png){width=220px fig-alt="Funded by the European Union"}
