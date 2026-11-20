@@ -24,6 +24,7 @@ Contact: <martn.zach@gmail.com> · [ORCID 0000-0002-6487-1468](https://orcid.org
 - **[SASMAP-15mC](projects/sasmap.qmd)** (Driving Urban Transitions, 2025–2028) – lead of WP2. Qualitative systems analysis of shared mobility in 15-minute cities, with causal loop diagrams developed through group model building in Graz, Bristol and Helsingborg.
 - **[BERTHA](projects/bertha.qmd)** (Horizon Europe, 2023–2026) – task lead for driver characterisation and acceptance testing: survey of about 4,700 drivers in five countries, data-driven driver typology, acceptance tests at three sites with 88 participants and almost 2,800 trials.
 - **[LEVITATE](projects/levitate.qmd)** (Horizon 2020, 2019–2022) – work package lead and AIT lead. SD model for forecasting the societal impacts of connected and automated vehicles, integrated into a web-based policy support tool for cities.
+- **[MultimoOpt](projects/multimoopt.qmd)** (VIF 2017, 2018–2020) – project lead. Park & Ride management solution with real-time information and reservation app, based on a survey of user types and a model-based location analysis; piloted at Stockerau station.
 
 **Research Assistant / Postdoctoral Research Fellow**, Institute for Nuclear Physics, TU Wien · 1995–1998
 

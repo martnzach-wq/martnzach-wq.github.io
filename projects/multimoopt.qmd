@@ -1,0 +1,47 @@
+---
+title: "MultimoOpt"
+subtitle: "VIF 2017 · 2018–2020 · completed"
+description: "Multimodal optimisation of transport infrastructure through a Park & Ride management solution – piloted at Stockerau station."
+image: ../assets/img/multimoopt.png
+order: 8
+categories: [MultimoOpt, Mobility, Park and ride]
+listing:
+  contents: "../posts/*/index.qmd"
+  include:
+    categories: "MultimoOpt"
+  type: default
+  sort: "date desc"
+  fields: [date, title, description]
+  date-format: "D MMM YYYY"
+---
+
+MultimoOpt (*Multimodale Optimierung der Verkehrsinfrastruktur mittels Informationsplattform für Parkraummanagement*) developed a Park & Ride management solution that motivates commuters to travel at least part of their trip by public transport. In metropolitan areas, the road network and parking are close to their capacity limits at peak hours and during incidents; a partial shift of passenger transport to rail helps to maintain traffic quality on the high-level road network.
+
+- **Influencing factors and information channels:** a representative survey of 1,534 people identified the factors behind mode choice and the willingness to switch, for six user types with different information needs. Comfort turned out to be a stronger argument than time savings. Most respondents preferred variable message signs as an information source but reacted more strongly to information received by app. About half would pay for a parking space, but hardly anyone more than €5.
+- **Potential of multimodal hubs:** a GIS-based analysis of stations at the interface between the high-level road and rail networks, followed by a demand analysis with a macroscopic transport model, led to the selection of Stockerau station as the pilot site.
+- **P+R management solution:** a mobile app (iOS and Android) with real-time status and reservation of parking spaces, combined with a barrier system with number plate recognition.
+- **Pilot operation:** February – June 2020 at the P+R facility in Stockerau. From mid-March, the COVID-19 lockdown sharply reduced the use of the facility.
+
+The prototype can be transferred to further sites.
+
+::: {.mz-facts}
+Funding
+: Verkehrsinfrastrukturforschung (VIF 2017), programme *Mobilität der Zukunft*, funded by the Federal Ministry for Climate Action (BMK), ÖBB-Infrastruktur and ASFINAG, managed by the FFG
+
+Duration
+: July 2018 – June 2020
+
+Coordinator
+: AIT Austrian Institute of Technology
+
+Partners
+: Graz University of Technology (Institute of Highway Engineering and Transport Planning), SWARCO TRAFFIC AUSTRIA, bluesource – mobile solutions
+
+My role
+: Project lead
+
+Links
+: [AIT project page](https://www.ait.ac.at/themen/integrated-mobility-systems/projects/multimoopt) · [FFG project database](https://projekte.ffg.at/projekt/6992493e-f36b-1410-85fe-00d3c07d99bb)
+:::
+
+## Related notes
