@@ -5,21 +5,29 @@ description: "Selected publications and conference contributions. The full list 
 
 ## Submitted and in preparation
 
-- Jaroszweski, D., Zach, M., Bügelmayer-Blaschek, M., Chapman, L., Millonig, A., Leone, M., Turchi, A., Hainoun, A., Stortecky, S., Nocerino, G. (2026). Understanding complex interactions between climate mitigation and adaptation measures – a methodological framework. Submitted to *One Earth*. Preprint: [doi:10.5281/zenodo.24364547](https://doi.org/10.5281/zenodo.24364547)
+- Jaroszweski, D., Zach, M., Bügelmayer-Blaschek, M., Chapman, L., Millonig, A., Hainoun, A., Turchi, A., Leone, M. F., Stortecky, S., Nocerino, G. (2026). Understanding complex interactions between climate mitigation and adaptation measures: a methodological framework. Submitted to *One Earth*. Preprint: [doi:10.5281/zenodo.24364547](https://doi.org/10.5281/zenodo.24364547)
 - Zach, M., et al. (in preparation). An expandable system dynamics framework for integrated assessment of climate adaptation and mitigation pathways.
 
 ## Climate, systems modelling and mobility (since 2019)
 
-- Zach, M., Kokoll, B., Rudloff, C. (2026). Modelling climate-resilient transport futures: a hybrid approach across urban and rural regions. In: Esztergár-Kiss, D. et al. (eds.), *TRA Conference 2026*, Lecture Notes in Mobility, Springer. [doi:10.1007/978-3-032-37170-6_145](https://doi.org/10.1007/978-3-032-37170-6_145) · [Note](posts/2026-05-20-tra-2026-climate-resilient-transport/index.qmd)
+- Zach, M., Kokoll, B., Rudloff, C. (2026). Modelling climate-resilient transport futures: a hybrid approach across urban and rural regions. In: Esztergár-Kiss, D. et al. (eds.), *TRA Conference 2026*, Lecture Notes in Mobility, Springer. [doi:10.1007/978-3-032-37170-6_145](https://doi.org/10.1007/978-3-032-37170-6_145) · Open access: [doi:10.5281/zenodo.24319598](https://doi.org/10.5281/zenodo.24319598) · [Note](posts/2026-05-20-tra-2026-climate-resilient-transport/index.qmd)
 - NEVERMORE and KNOWING projects (2026). *System dynamics models for climate mitigation and adaptation policy design.* Joint policy brief (contribution of the KNOWING modelling framework). [PDF](https://knowing-climate.eu/wp-content/uploads/2026/06/Policy-brief-NEVERMORE-and-KNOWING-Modelling.pdf) · [Note](posts/2026-06-01-knowing-policy-brief/index.qmd)
 - Habibi, R., Ramsey, A., Zach, M., Javed, B., Khan, Z. (2025). A systems thinking approach to inclusive governance. *Discover Global Society* 3, 169. [doi:10.1007/s44282-025-00317-y](https://doi.org/10.1007/s44282-025-00317-y)
-- Zach, M., Gebetsroither-Geringer, E., Bernadó, L., Lampert, J. (2025). The KNOWING Impact Interaction Model Framework – building upon the results of domain models for climate resilient pathways. *International System Dynamics Conference (ISDC) 2025*. [Abstract](https://proceedings.systemdynamics.org/2025/abstracts/1138.html)
-- Zach, M. (2024). Quantifying causal relationships by means of multiple domain models for the climate change mitigation and adaptation nexus. *ISDC 2024*. [Abstract](https://proceedings.systemdynamics.org/2024/abstracts/1420.html)
-- Zach, M., Gebetsroither, E., Bügelmayer-Blaschek, M. (2023). Climate change risks, adaptation and mitigation: a qualitative model of the interdependencies and responses. *ISDC 2023*. [Abstract](https://proceedings.systemdynamics.org/2023/abstracts/1058.html)
+- Zach, M., Gebetsroither-Geringer, E., Bernadó, L., Lampert, J. (2025). The KNOWING Impact Interaction Model Framework – building upon the results of domain models for climate resilient pathways. *International System Dynamics Conference (ISDC) 2025*. [Abstract](https://proceedings.systemdynamics.org/2025/abstracts/1138.html) · Full paper: [doi:10.5281/zenodo.24319003](https://doi.org/10.5281/zenodo.24319003)
+- Zach, M. (2024). Quantifying causal relationships by means of multiple domain models for the climate change mitigation and adaptation nexus. *ISDC 2024*. [Abstract](https://proceedings.systemdynamics.org/2024/abstracts/1420.html) · Full paper: [doi:10.5281/zenodo.24318662](https://doi.org/10.5281/zenodo.24318662)
+- Zach, M., Gebetsroither, E., Bügelmayer-Blaschek, M. (2023). Climate change risks, adaptation and mitigation: a qualitative model of the interdependencies and responses. *ISDC 2023*. [Abstract](https://proceedings.systemdynamics.org/2023/abstracts/1058.html) · Full paper: [doi:10.5281/zenodo.24317917](https://doi.org/10.5281/zenodo.24317917)
 - Ziakopoulos, A., Roussou, J., Chaudhry, A., Hu, B., Zach, M., et al. (2023). The LEVITATE Policy Support Tool of connected and automated transport systems. *Proceedings of the Transport Research Arena TRA 2022*, Lisbon. [Record](https://publications.ait.ac.at/en/publications/the-levitate-policy-support-tool-of-connected-and-automated-trans/)
 - Zach, M., Chaudhry, A., Bijleveld, F. (2022). Assessing systemic and wider impacts of cooperative, connected and automated mobility. *Proceedings of the 2022 International System Dynamics Conference*. [PDF](https://proceedings.systemdynamics.org/2022/papers/P1209.pdf)
 - Ziakopoulos, A., Roussou, J., Boghani, H., Hu, B., Zach, M., Oikonomou, M., Veisten, K. (2022). Methodological framework of creating the LEVITATE Policy Support Tool for connected and automated transport systems. *Proceedings of the 8th Road Safety and Simulation International Conference*, 1–10. [Record](https://toi.no/other-publications-8000/methodological-framework-of-the-levitate-policy-support-tool-for-connected-and-automated-transport-systems-article37620-815.html)
 - Ziakopoulos, A., Roussou, J., Boghani, H., Hu, B., Zach, M., et al. (2021). Forecasting impacts of connected and automated transport systems within the LEVITATE project. *10th International Congress on Transportation Research*, Proceedings.
+
+## Models and data
+
+Published in the [KNOWING community on Zenodo](https://zenodo.org/communities/knowing).
+
+- KNOWING SD modelling framework (2026): sub-models for [transport](https://doi.org/10.5281/zenodo.18420490), [microclimate](https://doi.org/10.5281/zenodo.18420255), [energy supply](https://doi.org/10.5281/zenodo.18421634) and [behaviour](https://doi.org/10.5281/zenodo.18421709), and the [parent model for the Tallinn demonstrator](https://doi.org/10.5281/zenodo.18420700).
+- Climate interactions table (2026). [doi:10.5281/zenodo.21645983](https://doi.org/10.5281/zenodo.21645983)
+- KNOWING qualitative SD model: [framework](https://doi.org/10.5281/zenodo.10210764) and [version with examples of measures for each Climate Impact Context](https://doi.org/10.5281/zenodo.10160178) (2023).
 
 ## Management of distributed and complex systems (2006–2011)
 
