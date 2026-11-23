@@ -25,7 +25,7 @@ Contact: <martn.zach@gmail.com> · [ORCID 0000-0002-6487-1468](https://orcid.org
 - **[BERTHA](projects/bertha.qmd)** (Horizon Europe, 2023–2026) – task lead for driver characterisation and acceptance testing: survey of about 4,700 drivers in five countries, data-driven driver typology, acceptance tests at three sites with 88 participants and almost 2,800 trials.
 - **[LEVITATE](projects/levitate.qmd)** (Horizon 2020, 2019–2022) – work package lead and AIT lead. SD model for forecasting the societal impacts of connected and automated vehicles, integrated into a web-based policy support tool for cities.
 - **[MultimoOpt](projects/multimoopt.qmd)** (VIF 2017, 2018–2020) – project lead. Park & Ride management solution with real-time information and reservation app, based on a survey of user types and a model-based location analysis; piloted at Stockerau station.
-- **[Scoot & Ride](projects/scootride.qmd)** (Mobility of the Future, completed 2021) – project lead. Kick scooters and e-scooters as a catalyst for shifting everyday trips to public transport and active mobility: catalogue of measures, preference survey with 382 participants and mode choice model applied to a synthetic population for Vienna and Lower Austria.
+- **[Scoot & Ride](projects/scootride.qmd)** (Mobility of the Future, 2019–2021) – project lead. Kick scooters and e-scooters as a catalyst for shifting everyday trips to public transport and active mobility: catalogue of measures, preference survey with 382 participants and mode choice model applied to a synthetic population for Vienna and Lower Austria.
 
 **Research Assistant / Postdoctoral Research Fellow**, Institute for Nuclear Physics, TU Wien · 1995–1998
 

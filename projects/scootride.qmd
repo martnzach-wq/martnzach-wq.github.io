@@ -1,6 +1,6 @@
 ---
 title: "Scoot & Ride"
-subtitle: "Mobility of the Future (FFG) · completed 2021"
+subtitle: "Mobility of the Future · 2019–2021 · completed"
 description: "Kick scooters and e-scooters as a catalyst for shifting everyday trips to public transport and active mobility – measures, preferences and model-based impact assessment."
 image: ../assets/img/scootride.png
 order: 9
@@ -34,6 +34,9 @@ Scoot & Ride (*Kleinstfahrzeuge als Katalysator zur Verlagerung von Alltagswegen
 ::: {.mz-facts}
 Funding
 : FTI programme *Mobility of the Future*, 12th call (autumn 2018), Federal Ministry for Climate Action (BMK), managed by the FFG
+
+Duration
+: October 2019 – December 2021
 
 Coordinator
 : AIT Austrian Institute of Technology
