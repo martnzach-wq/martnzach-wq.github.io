@@ -1,0 +1,54 @@
+---
+title: "Scoot & Ride"
+subtitle: "Mobility of the Future (FFG) · completed 2021"
+description: "Kick scooters and e-scooters as a catalyst for shifting everyday trips to public transport and active mobility – measures, preferences and model-based impact assessment."
+image: ../assets/img/scootride.png
+order: 9
+categories: [Scoot & Ride, Mobility, Micromobility]
+listing:
+  contents: "../posts/*/index.qmd"
+  include:
+    categories: "Scoot & Ride"
+  type: default
+  sort: "date desc"
+  fields: [date, title, description]
+  date-format: "D MMM YYYY"
+---
+
+Scoot & Ride (*Kleinstfahrzeuge als Katalysator zur Verlagerung von Alltagswegen auf den Umweltverbund*) analysed which measures make small vehicles – kick scooters and e-scooters, human-powered or electric – attractive enough to shift everyday trips to public transport, walking and cycling. Their potential lies in three uses: covering the "last mile" in combination with public transport, replacing short car and public transport trips, and extending the radius of trips that would otherwise be walked. Urban, suburban and rural areas were studied.
+
+- **Measures:** based on a literature review and an expert workshop, 21 measures were selected and assessed against six criteria – attractiveness of small vehicles, multimodality, road safety, reduction of conflicts with pedestrians, and added benefits for cyclists and pedestrians. They are grouped into options for the legislator and for municipalities (planning, infrastructure, sharing and multimodality, communication).
+- **Preference survey:** an online survey with 382 participants, using AIT's MyTrips tool. Participants reported their current trips; the tool then calculated alternative routes with kick scooters or e-scooters under the proposed measures, and participants chose between their current route and the alternative (a stated preference experiment based on revealed trips).
+- **Impact assessment:** a mode choice model estimated from the survey data was applied to a synthetic population for Vienna and Lower Austria, with case studies in Pressbaum (Lower Austria) and Vienna-Donaustadt, including a cost estimate of the infrastructure measures.
+
+## Recommendations
+
+- Infrastructure measures – wider cycle paths and pavements, parking at public transport stops – have a higher shift potential than taking scooters on board public transport. E-scooter riders rate the expansion of cycling infrastructure as particularly important.
+- Kick scooters also have a considerable shift potential: they are cheap, light and already available in many households.
+- Behaviour differs little between Vienna's outer districts and Lower Austria, where high-quality public transport can be reached by scooter.
+- Hardly anyone switches from the bicycle, so expanding cycling infrastructure promotes both cycling and scooter use.
+- The share of potential switchers is highest from public transport (30–40% chose the alternative), especially for trips of up to 20 minutes. From the car, just over 20% switched to (e-)scooters, but fewer than 10% chose the combination of (e-)scooter and public transport.
+- A multi-functional mobility app is considered valuable; free training courses show no noticeable potential.
+- Packages of measures have a recognisable effect on the modal split. Much of the shift results from higher ownership of kick scooters and e-scooters and from e-scooter sharing membership – which attractive measures in turn encourage.
+
+::: {.mz-facts}
+Funding
+: FTI programme *Mobility of the Future*, 12th call (autumn 2018), Federal Ministry for Climate Action (BMK), managed by the FFG
+
+Coordinator
+: AIT Austrian Institute of Technology
+
+Partners
+: con.sens mobilitätsdesign, Snizek + Partner Verkehrsplanungs GmbH
+
+My role
+: Project lead
+
+Results
+: [Final report (German, PDF)](https://www.ait.ac.at/fileadmin/mc/energy/downloads/SBC/Project_pictures/Scoot_Ride/AIT-Report-S_R-Einzelseiten.pdf)
+
+Links
+: [AIT project page](https://www.ait.ac.at/themen/integrated-mobility-systems/projects/scootride) · [FFG project database](https://projekte.ffg.at/projekt/af8a433e-f36b-1410-85f3-00d3c07d99bb)
+:::
+
+## Related notes
